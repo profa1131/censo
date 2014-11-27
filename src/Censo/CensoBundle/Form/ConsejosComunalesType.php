@@ -15,12 +15,44 @@ class ConsejosComunalesType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nombre')
-            ->add('direccion')
-            ->add('codigo')
-            ->add('rif')
-            ->add('numeroCuenta')
-            ->add('comuna')
+            ->add('nombre','text', array(
+        'label' => '* Nombre',
+        'required' => true,
+        'attr' => array('class' => 'form-control',
+        'placeholder' => 'Nombre'),
+        ))
+            ->add('direccion', 'textarea', array(
+        'label' => '* Direccion',
+        'required' => true,
+        'attr' => array('class' => 'form-control',
+        'placeholder' => 'Direccion'),
+        ))
+            ->add('codigo','text',array(
+        'label' => '* Codigo',
+        'required' => true,
+        'max_length'=> 10,
+        'attr' => array('class' => 'form-control',
+        'placeholder' => 'Codigo'),
+        ))
+            ->add('rif','text',array(
+        'label' => '* Rif',
+        'required' => true,
+        'max_length'=> 10,
+        'attr' => array('class' => 'form-control',
+        'placeholder' => 'Rif'),
+        ))
+            ->add('numeroCuenta', 'number', array(
+        'label' => '* Numero de Cuenta',
+        'required' => true,
+        'attr' => array('class' => 'form-control',
+        'placeholder' => 'Numero de Cuenta'),
+        ))
+            ->add('comuna', null, array(
+        'label' => '* Comuna',
+        'required' => true,
+        'attr' => array('class' => 'form-control',
+        'placeholder' => 'Comuna'),
+        ))
         ;
     }
     

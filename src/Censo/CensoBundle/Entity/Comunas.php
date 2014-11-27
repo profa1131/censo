@@ -46,6 +46,20 @@ class Comunas
     /**
      * @var string
      *
+     * @ORM\Column(name="correo", type="string", length=255, nullable=false)
+     */
+    private $correo;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telefono", type="string", length=11, nullable=false)
+     */
+    private $telefono;
+    
+    /**
+     * @var string
+     *
      * @ORM\Column(name="direccion", type="string", length=255, nullable=false)
      */
     private $direccion;
@@ -162,5 +176,51 @@ class Comunas
         $this->parroquia = $parroquia;
 
         return $this;
+    }
+
+    /**
+     * Set correo
+     *
+     * @param string $correo
+     * @return Comunas
+     */
+    public function setCorreo($correo)
+    {
+        $this->correo = $correo;
+
+        return $this;
+    }
+
+    /**
+     * Get correo
+     *
+     * @return string 
+     */
+    public function getCorreo()
+    {
+        return $this->correo;
+    }
+
+    /**
+     * Set telefono
+     *
+     * @param string $telefono
+     * @return Comunas
+     */
+    public function setTelefono($telefono)
+    {
+        $this->telefono = $telefono;
+
+        return $this;
+    }
+
+    /**
+     * Get telefono
+     *
+     * @return string 
+     */
+    public function getTelefono()
+    {
+        return $this->telefono;
     }
 }

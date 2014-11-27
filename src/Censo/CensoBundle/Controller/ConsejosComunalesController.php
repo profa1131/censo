@@ -76,7 +76,7 @@ class ConsejosComunalesController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+       $form->add('submit', 'submit', array('label' => 'Agregar','attr' => array('class' => 'btn btn-success')));
 
         return $form;
     }

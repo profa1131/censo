@@ -1,0 +1,112 @@
+{% extends '::base.html.twig' %}
+{% block stylesheets %}
+    {{parent()}}
+    
+   
+{% endblock %}
+{% block bootstrap %} {% endblock %}
+{% block _body %}   {% endblock %}
+          
+{% block body %}
+<div class="container">
+    <div class="col-md-2 col-md-offset-1" align="center">               
+        <img src="{{ asset('bundles/recibo/imagenes/ubv.png')}}" alt="Logo UBV">
+    </div>
+    <div class="col-md-8">            
+            <div class="panel panel-primary">    
+                <div class="panel-heading"><i class="glyphicon glyphicon-lock"></i> Crear Nueva Contraseña</div>
+                <div class="panel-body">  
+                    <div class="col-md-12">
+                          <p class="text-danger text-right"><i class="glyphicon glyphicon-asterisk"></i> Campo Obligatorio</p>
+                      </div>
+             
+                  <div class="edit-crear">
+    
+
+    <form  id="verificar" name="verificar" class="form-signin" action="{{ path('cambio_contrasenia') }}" method="post">
+                
+                <input type="hidden" id="id" name="id" value={{ id }} class="form-control">
+                
+                <div class="row">
+                    <div class="form-group col-lg-12">
+                        <label for="password">* Ingrese su Nueva Contraseña</label>
+                        <input type="password" class="form-control" name="password" placeholder="Ingrese su Nueva Contraseña" />                
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="form-group col-lg-12">
+                        <label for="password">* Repita su Nueva Contraseña</label>
+                        <input type="password" class="form-control" name="confirmPassword" placeholder="Repita su Nueva Contraseña" />
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="form-group col-lg-12">
+                         <button class="btn btn-primary azul1" type="submit">Cambiar Contraseña</button>
+                    </div>
+                </div>
+                
+            </form> 
+            </div>
+        </div>                
+    </div>        
+</div>
+</div>
+{% endblock %}
+
+ {% block javascripts %}
+    {{parent()}}
+
+    
+
+<script>
+
+
+
+$(document).ready(function() {
+    $('#verificar').bootstrapValidator({
+        message: 'This value is not valid',
+        fields: {                      
+            password: {
+                validators: {
+                    stringLength: {
+                        min: 8,
+                        max: 15,
+                        message: 'La contraseña debe tener entre 8 y 15 caracteres'
+                    },
+                    notEmpty: {
+                        message: 'La contraseña es requerida'
+                    },
+                    identical: {
+                        field: 'confirmPassword',
+                        message: 'La contraseña y la confirmación de la contraseña no son iguales'
+                    }
+                }
+            },
+            confirmPassword: {
+                validators: {
+                  	stringLength: {
+                        min: 8,
+                        max: 15,
+                        message: 'La confirmacion de la contraseña debe tener entre 8 y 15 caracteres'
+                    },
+                    notEmpty: {
+                        message: 'La confirmacion de la contraseña es requerida'
+                    },
+                    identical: {
+                        field: 'password',
+                        message: 'La contraseña y la confirmación de la contraseña no son iguales'
+                    }
+                }
+            }
+        }
+    });
+});
+
+
+</script>
+<!-- Bootstrap validator js -->
+<script src="{{ asset('bundles/recibo/js/bootstrap.min.js')}}"></script>
+<script src="{{ asset('bundles/recibo/js/bootstrapValidator.js')}}"></script>
+{% endblock %}

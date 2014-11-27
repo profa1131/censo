@@ -9,15 +9,17 @@
                     Editar Habitantes
                 </div>
                 <div class="panel-body">
-                    <p>
+                   
+</a>
 
     {{ form(edit_form) }}
 
-        <ul class="record_actions">
-    
-        <a class="btn btn-primary" href="{{ path('habitantes') }}">Volver a la Lista </a>
         
     
-    <li>{{ form(delete_form) }}</li>
-</ul>
+        <a class=" col-md-12 mt btn btn-primary" href="{{ path('habitantes') }}">Volver a la Lista </a>
+        
+    
+    {{ form(delete_form) }}
+
+                </div></div></div>
 {% endblock %}

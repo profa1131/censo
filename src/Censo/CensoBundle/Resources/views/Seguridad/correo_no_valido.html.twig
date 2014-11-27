@@ -1,0 +1,35 @@
+{% extends '::base.html.twig' %}
+{% block stylesheets %}
+    {{parent()}}
+{% endblock %}
+{% block bootstrap %} {% endblock %}
+{% block _body %}   {% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div >               
+            <img src="{{ asset('bundles/recibo/imagenes/ubv.png')}}" alt="Logo UBV">
+        </div>
+        </br>
+        </br>
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                <h3 class="panel-title">Correo no válido</h3>
+            </div>
+            <div class="panel-body">
+                El correo "{{ correo }}" no esta registrado en nuestra base de datos.
+                <br></br>
+                Por favor intente  nuevamente.                                                                
+                <br></br>
+                Gracias y disculpe las molestias.
+                <br></br>
+                <a class="btn btn-success" href="{{ path('contrasenia') }}">Olvido de contraseña</a>
+            </div>
+        </div>
+    {% endblock %}
+
+    {% block javascripts %}
+        {{parent()}}
+        <!-- Bootstrap validator js -->
+        <script src="{{ asset('bundles/recibo/js/bootstrap.min.js')}}"></script>
+    {% endblock %}

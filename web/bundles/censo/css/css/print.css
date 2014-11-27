@@ -1,0 +1,11 @@
+* {font-size: 10px;}
+
+
+.print, input, select, .tablesorter-filter-row{
+
+	display:none;
+}
+
+
+
+

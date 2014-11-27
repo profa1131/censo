@@ -76,7 +76,7 @@ class HabitantesController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+       $form->add('submit', 'submit', array('label' => 'Agregar','attr' => array('class' => 'btn btn-success col-md-12 mt')));
 
         return $form;
     }
@@ -143,7 +143,7 @@ class HabitantesController extends Controller
 
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
-
+        
         return array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
@@ -165,8 +165,8 @@ class HabitantesController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
-
+        
+        $form->add('submit', 'submit',  array('label' => 'Actualizar','attr' => array('class' => 'btn btn-success col-md-12 mt')));
         return $form;
     }
     /**

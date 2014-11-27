@@ -1,0 +1,123 @@
+{% extends '::base.html.twig' %}
+{% block stylesheets %}
+    {{parent()}}
+    
+   
+{% endblock %}
+{% block bootstrap %} {% endblock %}
+{% block _body %}   {% endblock %}
+          
+{% block body %}      
+<div class="container">
+     <!--<div class="row">
+        <div align="center">
+            <img src="{{ asset('bundles/recibo/imagenes/ubv.png')}}" ALT="Logo UBV">
+            <hr>
+        </div>
+     </div>-->
+    <div class="col-md-8  col-md-offset-2">
+        <!--
+            <div class="col-md-12">
+                <div class="row">
+                          <a class="btn btn-info" href="{{ path('login') }}"><i class="glyphicon glyphicon-arrow-left"></i> Regresar al Inicio</a> 
+                          <hr>
+                </div>
+            </div>
+        -->
+            <div class="panel panel-primary">    
+                <div class="panel-heading azul1"><i class="glyphicon glyphicon-user"></i> Recuperación de Contraseña</div>
+                <div class="panel-body">  
+                    <div class="col-md-12">
+                          <p class="text-danger text-right"><i class="glyphicon glyphicon-asterisk"></i> Campo Obligatorio</p>
+                      </div>
+             
+                  <div class="edit-crear">
+                      <p class="alert alert-info">El sistema le enviará un correo electrónico con la información necesaria para recuperar su contraseña</p>
+            
+    
+<!-- Formuario -->
+    <form class="col-lg-12 form-signin" id="verificar" name="verificar" action="{{ path('olvido_contrasenia') }}" method="post">  
+        
+        <div class="form-group">
+                                <label class="control-label required">* Ingrese su Correo Electrónico de la UBV</label>
+                                <div class='input-group'>
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-envelope"></span>
+                                    </span>
+                                    <input type="text" class="form-control" id="email" name="email" required="required" placeholder="prueba@ubv.edu.ve" onkeyup="cambiaMinuscula(this.value)"/>
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-asterisk"></span>
+                                    </span>
+                                </div>
+                            </div>
+        
+        <div class="row">
+		<div class="form-group col-lg-12">
+                    
+		</div>
+        </div>
+                
+
+        <div class="row">
+            <div class="form-group col-lg-12">
+              <button type="submit" class="btn btn-primary col-lg-12 azul1">Enviar</button>
+              
+            </div>
+        </div>
+        
+        
+        
+     </form>
+
+     <!-- end Formulario -->
+   
+            </div>
+        </div>                
+    </div>
+    
+        <div class="col-md-12">
+                <div class="row">
+                          <a class="btn btn-info" href="{{ path('login') }}"><i class="glyphicon glyphicon-arrow-left"></i> Regresar al Inicio</a> 
+                         
+                </div>
+            </div>
+    
+    </div>
+</div>
+
+{% endblock %}
+   
+ {% block javascripts %}
+    {{parent()}}
+    <script>
+
+function cambiaMinuscula(valor){
+    var val = valor;
+    document.getElementById('username').value = val.toLowerCase(); 
+}
+
+$(document).ready(function() {
+    $('#verificar').bootstrapValidator({
+        message: 'This value is not valid',
+        fields: {            
+            email: {
+                validators: {
+                    notEmpty: {
+                        message: 'La direccion de correo UBV es requerido'
+                    },
+                    emailAddress: {
+                        message: 'La direccion de correo UBV no es válida, ej: usuario@ubv.edu.ve'
+                    }
+                }
+            }                   
+        }
+    });
+});
+
+
+</script>
+<!-- Bootstrap validator js -->
+        <script src="{{ asset('bundles/recibo/js/bootstrap.min.js')}}"></script>
+        <script src="{{ asset('bundles/recibo/js/bootstrapValidator.js')}}"></script>
+    
+{% endblock %}

@@ -1,0 +1,16 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: pdo_pgsql
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: censo
+    database_user: postgres
+    database_password: postgres
+    
+    mailer_transport: gmail
+    mailer_host: ~
+    mailer_user: profa1131@gmail.com    
+    mailer_password: ALERTAXTREMA
+    locale: es
+    secret: e3c5a5ca8463e7b61c0b50d5f64f9802470dd8e5
+    

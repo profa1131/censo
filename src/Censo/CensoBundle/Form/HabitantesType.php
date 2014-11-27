@@ -55,9 +55,10 @@ class HabitantesType extends AbstractType
                     'required' => true,
                     'expanded' => true
                 ))
-            ->add('cedula', 'text', array(
+            ->add('cedula', 'number', array(
                     'label' => '* Cedula',
-                    'required' => false,
+                    'required' => true,
+                    
                     'attr' => array('class' => 'form-control',
                         'placeholder' => 'Cedula'),
                 ))
@@ -69,7 +70,12 @@ class HabitantesType extends AbstractType
                     'required' => true,
                     'expanded' => true
                 ))
-            ->add('fechaNacimiento')
+            ->add('fechaNacimiento','birthday',array(
+                    'label' => '* Fecha de nacimiento',
+                    'required' => true,
+                    
+                ))
+                
             ->add('embarazo', 'choice', array(
                     'choices' => array(
                         'si' => 'SI',
@@ -78,12 +84,38 @@ class HabitantesType extends AbstractType
                     'required' => true,
                     'expanded' => true
                 ))
-            ->add('parentesco')
-            ->add('gradoDeInstruccion')
+            ->add('parentesco', 'choice', array(
+                    'choices' => array(
+                        'padre' => 'Padre',
+                        'madre' => 'Madre',
+                        'hijo' => 'Hijo(a)',
+                        'abuela' => 'Abuelo(a)',
+                        'otros' => 'Otros',
+                    ),
+                'empty_value'=> '-Seleccione-',
+                'attr'=> array('class'=> 'form-control',
+                    'required' => true,
+                 )))
+            ->add('gradoDeInstruccion', 'choice', array(
+                    'choices' => array(
+                        'proimaria' => 'Primaria',
+                        'secundaria' => 'Secundaria',
+                        'bachiller' => 'Bachiller',
+                        'tsu' => 'TSU',
+                        'licenciado' => 'Licenciado',
+                        'ingeniero' => 'Ingeniero',
+                        'magister' => 'Magister',
+                        'doctor' => 'Doctor',
+                    ),
+                'empty_value'=> '-Seleccione-',
+                'attr'=> array('class'=> 'form-control',
+                    'required' => true,
+                 )))
             ->add('cne', 'choice', array(
                     'choices' => array(
                         'si' => 'SI',
-                        'no' => 'NO'
+                        'no' => 'NO',
+                        
                     ),
                     'required' => true,
                     'expanded' => true
@@ -96,8 +128,21 @@ class HabitantesType extends AbstractType
                     'required' => true,
                     'expanded' => true
                 ))
-            ->add('tipoDeIngreso')
-            ->add('ingresoMensual')
+            ->add('tipoDeIngreso', 'choice', array(
+                    'choices' => array(
+                        'diario' => 'Diario',
+                        'semanal' => 'Semanal',
+                        'quincenal' => 'Quincenal',
+                        'mensual' => 'Mensual'),
+                'empty_value'=> '-Seleccione-',
+                'attr'=> array('class'=> 'form-control',
+                    'required' => true,
+                 )))
+            ->add('ingresoMensual','number', array(
+                    'attr'=> array('class'=> 'form-control',
+                    'required' => false,
+                    'placeholder' => 'Ingrese en Bolivares el monto de sus ingresos Mensuales'
+                 )))
             ->add('jefeGrupoFamiliar', 'choice', array(
                     'choices' => array(
                         'si' => 'SI',
@@ -173,26 +218,22 @@ class HabitantesType extends AbstractType
             )))
             ->add('enfermedades', null, array(
                 'label'=>'* Enfermedades',
-                    'expanded'=> true,
-                    'multiple'=> true,
+                'expanded'=> true,
+                'multiple'=> true,
+                ))
+            ->add('discapacidades',null, array(
+                'label'=>'Discapacidades',               
                 'empty_value'=> '-Seleccione-',
-                
-            ))
-            ->add('discapacidades', null, array(
-                'label'=>'* Discapacidades',
-                    'expanded'=> true,
-                    'multiple'=> true,
-                'empty_value'=> '-Seleccione-',
-                
-            ))
-            ->add('familias', null, array(
-                'label'=>'* Familias',               
-                'empty_value'=> 'Familia',
                 'attr'=> array('class'=> 'form-control',
             )))
-        ;
+                ->add('familias',null, array(
+                'label'=>'Familias',               
+                'empty_value'=> '-Seleccione-',
+                'attr'=> array('class'=> 'form-control',
+            )));
+        
     }
-    
+   
     /**
      * @param OptionsResolverInterface $resolver
      */

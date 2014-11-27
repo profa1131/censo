@@ -227,18 +227,14 @@ class Habitantes
      */
     private $enfermedades;
 
+    
     /**
-     * @var \Doctrine\Common\Collections\Collection
+     * @var \Discapacidades
      *
-     * @ORM\ManyToMany(targetEntity="Discapacidades", inversedBy="habitantes")
-     * @ORM\JoinTable(name="habitantes_discapacidades",
-     *   joinColumns={
-     *     @ORM\JoinColumn(name="habitantes_id", referencedColumnName="id")
-     *   },
-     *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="discapacidades_id", referencedColumnName="id")
-     *   }
-     * )
+     * @ORM\ManyToOne(targetEntity="Discapacidades")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Discapacidades_id", referencedColumnName="id")
+     * })
      */
     private $discapacidades;
     
@@ -251,6 +247,13 @@ class Habitantes
      * })
      */
     private $familias;
+     
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="edad", type="string", length=255, nullable=false)
+     */
+    private $edad;
 
     /**
      * Constructor
@@ -983,4 +986,17 @@ class Habitantes
         return $this->familias;
     }
     
+
+    /**
+     * Set discapacidades
+     *
+     * @param \Censo\CensoBundle\Entity\Discapacidades $discapacidades
+     * @return Habitantes
+     */
+    public function setDiscapacidades(\Censo\CensoBundle\Entity\Discapacidades $discapacidades = null)
+    {
+        $this->discapacidades = $discapacidades;
+
+        return $this;
+    }
 }

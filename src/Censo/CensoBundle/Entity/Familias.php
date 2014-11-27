@@ -250,7 +250,6 @@ class Familias
         return $this->concejosComunales;
     }
     public function __toString() {
-        return $this->apellidos;
+        return $this->getApellidos();
     }
-    
 }

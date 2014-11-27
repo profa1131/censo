@@ -1,0 +1,34 @@
+{% extends '::base.html.twig' %}
+{% block stylesheets %}
+    {{parent()}}
+{% endblock %}
+{% block bootstrap %} {% endblock %}
+{% block _body %}   {% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div >               
+            <img src="{{ asset('bundles/recibo/imagenes/ubv.png')}}" alt="Logo UBV">
+        </div>
+        </br>
+        </br>
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h3 class="panel-title">Registro no válido</h3>
+            </div>
+            <div class="panel-body">
+                Su código de verificación es incorrecto o su tiempo de vida expiró (mayor a 48 horas).
+                <br></br>
+                Por favor registrese nuevamente.                                                
+                <a class="btn btn-success" href="{{ path('cuenta', {'solicitud': 'registro'}) }}">Registro</a>
+                <br></br>
+                Gracias y disculpe las molestias.
+            </div>
+        </div>
+    {% endblock %}
+
+    {% block javascripts %}
+        {{parent()}}
+        <!-- Bootstrap validator js -->
+        <script src="{{ asset('bundles/recibo/js/bootstrap.min.js')}}"></script>
+    {% endblock %}

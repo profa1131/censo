@@ -75,8 +75,8 @@ class ComunasController extends Controller
             'action' => $this->generateUrl('comunas_create'),
             'method' => 'POST',
         ));
-
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Agregar','attr' => array('class' => 'btn btn-success col-md-12 mt')));
+        
 
         return $form;
     }
@@ -164,8 +164,8 @@ class ComunasController extends Controller
             'action' => $this->generateUrl('comunas_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
-
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Actualizar','attr' => array('class' => 'btn btn-success col-md-12 mt')));
+     
 
         return $form;
     }
