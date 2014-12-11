@@ -34,44 +34,20 @@
                 <td>{{ entity.nombre }}</td>
             </tr>
             <tr>
-                <th>Apellido</th>
-                <td>{{ entity.apellido }}</td>
-            </tr>
-            <tr>
-                <th>Cedula</th>
-                <td>{{ entity.cedula }}</td>
-            </tr>
-            <tr>
-                <th>Tipoempleado</th>
-                <td>{{ entity.tipoEmpleado }}</td>
-            </tr>
-            <tr>
-                <th>Departamento</th>
-                <td>{{ entity.departamento }}</td>
-            </tr>
-            <tr>
-                <th>Cargo</th>
-                <td>{{ entity.cargo }}</td>
-            </tr>
-            <tr>
-                <th>Sede</th>
-                <td>{{ entity.sede }}</td>
-            </tr>
-            <tr>
-                <th>Fechaingreso</th>
-                <td>{{ entity.fechaIngreso|date('Y-m-d H:i:s') }}</td>
+                <th>Codigo</th>
+                <td>{{ entity.codigo }}</td>
             </tr>
             <tr>
                 <th>Fechaactivacion</th>
                 <td>{{ entity.fechaActivacion|date('Y-m-d H:i:s') }}</td>
             </tr>
             <tr>
-                <th>Fecharegistro</th>
-                <td>{{ entity.fechaRegistro|date('Y-m-d H:i:s') }}</td>
+                <th>Fechaingreso</th>
+                <td>{{ entity.fechaIngreso|date('Y-m-d H:i:s') }}</td>
             </tr>
             <tr>
-                <th>Telefonooficina</th>
-                <td>{{ entity.telefonoOficina }}</td>
+                <th>Telefono</th>
+                <td>{{ entity.telefono }}</td>
             </tr>
             <tr>
                 <th>Telefonomovil</th>
@@ -83,7 +59,7 @@
         <ul class="record_actions">
     <li>
         <a href="{{ path('usuarios') }}">
-            Back to the list
+            Volver a la Lista
         </a>
     </li>
     <li>

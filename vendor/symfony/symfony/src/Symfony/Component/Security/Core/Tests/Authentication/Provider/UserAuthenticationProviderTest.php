@@ -117,7 +117,7 @@ class UserAuthenticationProviderTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException \Symfony\Component\Security\Core\Exception\BadCredentialsException
-     * @expectedExceptionMessage Bad credentials
+     * @expectedExceptionMessage Usuario o Contraceña Incorrectas
      */
     public function testAuthenticateWhenPostCheckAuthenticationFails()
     {

@@ -55,7 +55,7 @@ class __TwigTemplate_8b99a2ce6aff91a9c09afbaaeeafa3a7dc107a0d77b5265552a05525149
         // line 21
         echo $this->env->getExtension('routing')->getPath("vocerias");
         echo "\">
-            Back to the list
+            Volver a la Lista
         </a>
     </li>
     <li>

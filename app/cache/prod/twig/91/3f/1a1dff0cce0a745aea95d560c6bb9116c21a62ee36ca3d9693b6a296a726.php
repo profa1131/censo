@@ -11,14 +11,16 @@ class __TwigTemplate_913f1a1dff0cce0a745aea95d560c6bb9116c21a62ee36ca3d9693b6a29
 
         $this->blocks = array(
             'title' => array($this, 'block_title'),
+            'headscript' => array($this, 'block_headscript'),
             'body' => array($this, 'block_body'),
+            'footerscript' => array($this, 'block_footerscript'),
         );
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "<!DOCTYPE html>
+        echo "r<!DOCTYPE html>
 <html lang=\"es\">
   <head>
     <meta charset=\"utf-8\">
@@ -30,45 +32,49 @@ class __TwigTemplate_913f1a1dff0cce0a745aea95d560c6bb9116c21a62ee36ca3d9693b6a29
     <title>";
         // line 10
         $this->displayBlock('title', $context, $blocks);
-        echo "</title>
-
+        echo "</title>     
     <!-- Bootstrap Core CSS -->
     <link href=\"";
-        // line 13
+        // line 12
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/censo/css/bootstrap.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
 
     <!-- MetisMenu CSS -->
     <link href=\"";
-        // line 16
+        // line 15
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/censo/css/plugins/metisMenu/metisMenu.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
 
     <!-- Custom CSS -->
     <link href=\"";
-        // line 19
+        // line 18
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/censo/css/sb-admin-2.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
 
     <!-- Custom Fonts -->
     <link href=\"";
-        // line 22
+        // line 21
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/censo/font-awesome-4.1.0/css/font-awesome.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" type=\"text/css\">
 
     <!-- Iconos - Fonts Foundation Zurb -->
     <link href=\"";
-        // line 25
+        // line 24
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/censo/css/foundation-icons/foundation-icons/foundation-icons.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" type=\"text/css\">
 
+    
+    
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src=\"https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js\"></script>
         <script src=\"https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js\"></script>
     <![endif]-->
-    
+    ";
+        // line 34
+        $this->displayBlock('headscript', $context, $blocks);
+        echo " 
   </head>
   <body>
 <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
@@ -150,7 +156,10 @@ class __TwigTemplate_913f1a1dff0cce0a745aea95d560c6bb9116c21a62ee36ca3d9693b6a29
                         <li><a href=\"#\"><i class=\"fa fa-gear fa-fw\"></i> Settings</a>
                         </li>
                         <li class=\"divider\"></li>
-                        <li><a href=\"login.html\"><i class=\"fa fa-sign-out fa-fw\"></i> Logout</a>
+                        <li><a href=\"";
+        // line 116
+        echo $this->env->getExtension('routing')->getPath("logout");
+        echo "\"><i class=\"fa fa-sign-out fa-fw\"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -178,13 +187,20 @@ class __TwigTemplate_913f1a1dff0cce0a745aea95d560c6bb9116c21a62ee36ca3d9693b6a29
                             <a href=\"/consejocomunal/index.php\"><i class=\"fi-universal-access\"></i> Inicio</a>
                         </li>
                         <li>
+                            <li>
+                                    <a href=\"/censo/web/app_dev.php/comunas\">COMUNAS</a>
+                                </li>
+                                <li>
+                                    <a href=\"/censo/web/app_dev.php/consejoscomunales\">Consejos Comunales</a>
+                                </li>
                             <a href=\"#\"><i class=\"fi-torsos-all-female\"></i> Familias<span class=\"fa arrow\"></span></a>
                             <ul class=\"nav nav-second-level\">
                                 <li>
                                     <a href=\"/censo/web/app_dev.php/familias\">Listado de Familias</a>
                                 </li>
+                                
                                 <li>
-                                    <a href=\"/censo/web/app_dev.php/familias/new\">Agregar nueva Familia</a>
+                                    <a href=\"/censo/web/app.php/familias/new\">Agregar nueva Familia</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -217,28 +233,66 @@ class __TwigTemplate_913f1a1dff0cce0a745aea95d560c6bb9116c21a62ee36ca3d9693b6a29
                             <a href=\"#\"><i class=\"fa fa-table fa-fw\"></i> Administracion de Tablas<span class=\"fa arrow\"></span></a>
                             <ul class=\"nav nav-second-level\">
                                 <li>
-                                    <a href=\"/censo/web/app_dev.php/discapacidades\">Discapacidades </a>
-                                </li>
-                                <li>
                                     <a href=\"/censo/web/app_dev.php/vocerias\">Vocerias</a>
                                 </li>
                                 <li>
-                                    <a href=\"/censo/web/app_dev.php/tipoparedes\">Tipo de Paredes </a>
+                                    <a href=\"/censo/web/app_dev.php/enseres\">Enseres</a>
                                 </li>
                                 <li>
-                                    <a href=\"/censo/web/app_dev.php/enfermedades\">Enfermedades</a>
+                                    <a href=\"/censo/web/app_dev.php/servicioscomunales\">Servicios Comunales</a>
+                                </li>
+                                <li>
+                                    <a href=\"/censo/web/app_dev.php/transportes\">Transportes</a>
                                 </li>
                                 <li>
                                     <a href=\"/censo/web/app_dev.php/telefonias\">Telefonias</a>
                                 </li>
                                 <li>
-                                    <a href=\"/censo/web/app_dev.php/aguasservidas\">Aguas Servidas </a>
+                                    <a href=\"/censo/web/app_dev.php/areasdetrabajos\">Areas De Trabajos</a>
+                                </li>
+                                <li>
+                                    <a href=\"/censo/web/app.php/recoleccionbasura\">Recoleccion de Basura</a>
+                                </li><li>
+                                    <a href=\"/censo/web/app.php/aguasservidas\">Aguas Servidas</a>
+                                </li><li>
+                                    <a href=\"/censo/web/app.php/enfermedades\">Enfermedades</a>
+                                </li><li>
+                                    <a href=\"/censo/web/app.php/condicionessalubridad\">Condiciones de Salubridad</a>
+                                </li><li>
+                                    <a href=\"/censo/web/app.php/formatenencia\">Forma de Tenencias</a>
+                                </li><li>
+                                    <a href=\"/censo/web/app.php/actividadcomercialvivienda\">Actividad Comercial en Vivienda</a>
+                                </li><li>
+                                    <a href=\"/censo/web/app.php/condicionterrenos\">Condicion del Terreno</a>
+                                </li><li>
+                                    <a href=\"/censo/web/app_dev.php/animales\">Animales</a>
+                                </li><li>
+                                    <a href=\"/censo/web/app_dev.php/plagas\">Plagas</a>
+                                </li>
+                                <li>
+                                    <a href=\"/censo/web/app_dev.php/tipoparedes\">TipoParedes</a>
+                                </li>
+                                <li>
+                                    <a href=\"/censo/web/app_dev.php/tipotechos\">TipoTechos</a>
+                                </li>
+                                <li>
+                                    <a href=\"/censo/web/app_dev.php/tipoviviendas\">TipoViviendas</a>
+                                </li>
+                                <li>
+                                    <a href=\"/censo/web/app_dev.php/discapacidades\">Discapacidades</a>
+                                </li>
+                                <li>
+                                    <a href=\"/censo/web/app_dev.php/profesiones\">Profesiones</a>
+                                </li>
+                                <li>
+                                    <a href=\"/censo/web/app_dev.php/preguntas\">Preguntas</a>
                                 </li>
                                 <li>
                                     <a href=\"/censo/web/app_dev.php/misiones\">Misiones</a>
                                 </li>
+                                
                             </ul>
-                            <!-- /.nav-second-level -->
+              <!-- /.nav-second-level -->
                         </li>
                         <!--<li>
                             <a href=\"tables.html\"><i class=\"fa fa-table fa-fw\"></i> Administracion de Tablas</a>
@@ -325,7 +379,7 @@ class __TwigTemplate_913f1a1dff0cce0a745aea95d560c6bb9116c21a62ee36ca3d9693b6a29
                 <div class=\"col-lg-12\">
                   
                  ";
-        // line 289
+        // line 335
         $this->displayBlock('body', $context, $blocks);
         echo " 
                 </div>
@@ -340,28 +394,32 @@ class __TwigTemplate_913f1a1dff0cce0a745aea95d560c6bb9116c21a62ee36ca3d9693b6a29
     <!-- /#wrapper -->
     <!-- jQuery Version 1.11.0 -->
     <script src=\"";
-        // line 301
+        // line 347
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/censo/js/jquery-1.11.0.js"), "html", null, true);
         echo "\"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src=\"";
-        // line 304
+        // line 350
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/censo/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src=\"";
-        // line 307
+        // line 353
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/censo/js/plugins/metisMenu/metisMenu.min.js"), "html", null, true);
         echo "\"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src=\"";
-        // line 310
+        // line 356
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/censo/js/sb-admin-2.js"), "html", null, true);
         echo "\"></script>
-
+    ";
+        // line 357
+        $this->displayBlock('footerscript', $context, $blocks);
+        // line 359
+        echo "
 </body>
 
 </html>
@@ -374,10 +432,22 @@ class __TwigTemplate_913f1a1dff0cce0a745aea95d560c6bb9116c21a62ee36ca3d9693b6a29
         echo "Bienvenidos";
     }
 
-    // line 289
+    // line 34
+    public function block_headscript($context, array $blocks = array())
+    {
+    }
+
+    // line 335
     public function block_body($context, array $blocks = array())
     {
         echo " ";
+    }
+
+    // line 357
+    public function block_footerscript($context, array $blocks = array())
+    {
+        // line 358
+        echo "    ";
     }
 
     public function getTemplateName()
@@ -392,6 +462,6 @@ class __TwigTemplate_913f1a1dff0cce0a745aea95d560c6bb9116c21a62ee36ca3d9693b6a29
 
     public function getDebugInfo()
     {
-        return array (  378 => 289,  372 => 10,  362 => 310,  356 => 307,  350 => 304,  344 => 301,  329 => 289,  62 => 25,  56 => 22,  50 => 19,  44 => 16,  38 => 13,  32 => 10,  21 => 1,);
+        return array (  450 => 358,  447 => 357,  441 => 335,  436 => 34,  430 => 10,  422 => 359,  420 => 357,  416 => 356,  410 => 353,  404 => 350,  398 => 347,  383 => 335,  161 => 116,  76 => 34,  63 => 24,  57 => 21,  51 => 18,  45 => 15,  39 => 12,  34 => 10,  23 => 1,);
     }
 }

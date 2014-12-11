@@ -47,19 +47,19 @@
                 <!-- use the filter_reset : '.reset' option or include data-filter="" using the filter button demo code to reset the filters -->
                 <br>
 
-                <table class="tablesorter">
+                <table class="tablesorter col-lg-10">
                     <thead>
                         <tr>
                             
                             <th>Nombre Completo</th>
+                             <th>Cedula</th>
                             <th class="filter-select filter-exact" data-placeholder="-seleccione-">Genero</th>
-                           
-                            <th>Edades</th>
                             <th class="filter-select filter-exact" data-placeholder="-seleccione-">Embarazo</th>
-                            <th>Cedula</th>
+                           
                             <th class="filter-select filter-exact" data-placeholder="-seleccione-">Jefe de familia</th>
                             <th>Tlf Celular</th>
-                            <th class="filter-select filter-exact" data-placeholder="-seleccione-">Discapacidades</th>
+                            <th class="filter-select filter-exact" data-placeholder="-seleccione-">Empleo</th>
+                            <th class="filter-select filter-exact" data-placeholder="-seleccione-">Discapacitado</th>
                             <th class="filter-select filter-exact" data-placeholder="-seleccione-">Voceros</th>
                             <th class="print">Acciones</th>
                         </tr>
@@ -72,13 +72,14 @@
         <tr>
             
             <td>{{ entity.nombre }} {{ entity.apellido }}</td>            
-            <td>{{ entity.genero }}</td>            
-            <td>{{ entity.edad }}</td>
+             <td>{{ entity.cedula }}</td>
+            <td>{{ entity.genero }}</td>
             <td>{{ entity.embarazo }}</td>
-            <td>{{ entity.cedula }}</td>
+            
             <td>{{ entity.jefeGrupoFamiliar }}</td>
             <td>{{ entity.telefonoCelular }}</td>
-            <td>{{ entity.discapacidades.nombre }}</td>
+            <td>{{ entity.empleo }}</td>
+            <td>{{ entity.discapacidades}}</td>
             <td>{{ entity.participaOrganizacion }}</td>
             
             <td class="print">

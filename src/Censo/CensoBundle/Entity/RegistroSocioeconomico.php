@@ -21,6 +21,16 @@ class RegistroSocioeconomico
      * @ORM\SequenceGenerator(sequenceName="registro_socioeconomico_id_seq", allocationSize=1, initialValue=1)
      */
     private $id;
+    
+    /**
+     * @var \Familias
+     *
+     * @ORM\ManyToOne(targetEntity="Familias")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="familias_id", referencedColumnName="id")
+     * })
+     */
+    private $familias;
 
     /**
      * @var string
@@ -30,11 +40,12 @@ class RegistroSocioeconomico
     private $ingresoFamiliar;
 
     /**
-     * @var integer
+     * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\Column(name="actividad_comercial_vivienda_id", type="bigint", nullable=false)
+     * @ORM\ManyToMany(targetEntity="ActividadComercialVivienda", mappedBy="rgistroSocioeconomico")
      */
-    private $actividadComercialViviendaId;
+    private $actividadComercial;
+
 
     /**
      * @var string
@@ -64,19 +75,7 @@ class RegistroSocioeconomico
      */
     private $enfermosTerminales;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="discapacitados", type="string", length=255, nullable=false)
-     */
-    private $discapacitados;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="tercera_edad", type="string", length=255, nullable=false)
-     */
-    private $terceraEdad;
+       
 
     /**
      * @var string
@@ -190,13 +189,7 @@ class RegistroSocioeconomico
      */
     private $precioCilindro;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="sistema_electrico", type="string", length=255, nullable=false)
-     */
-    private $sistemaElectrico;
-
+   
     /**
      * @var string
      *
@@ -219,32 +212,13 @@ class RegistroSocioeconomico
     private $cuantosBobillosNecesita;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="mecanismo_informacion_id", type="bigint", nullable=false)
-     */
-    private $mecanismoInformacionId;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="organizaciones_counitarias", type="string", length=255, nullable=false)
      */
     private $organizacionesCounitarias;
 
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="fecha", type="date", nullable=true)
-     */
-    private $fecha;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="registro_socioeconomico", type="string", length=10, nullable=false)
-     */
-    private $registroSocioeconomico;
+   
 
     /**
      * @var \RecoleccionBasura
@@ -306,15 +280,7 @@ class RegistroSocioeconomico
      */
     private $tipoViviendas;
 
-    /**
-     * @var \Familias
-     *
-     * @ORM\ManyToOne(targetEntity="Familias")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="familias_id", referencedColumnName="id")
-     * })
-     */
-    private $familias;
+    
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -404,13 +370,7 @@ class RegistroSocioeconomico
      */
     private $animales;
 
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="ActividadComercialVivienda", mappedBy="rgistroSocioeconomico")
-     */
-    private $actividadComercial;
-
+    
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
@@ -433,12 +393,7 @@ class RegistroSocioeconomico
      */
     private $tipoParedes;
 
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Preguntas", mappedBy="registroSocioeconomico")
-     */
-    private $preguntas;
+   
 
     /**
      * Constructor
@@ -491,29 +446,6 @@ class RegistroSocioeconomico
     public function getIngresoFamiliar()
     {
         return $this->ingresoFamiliar;
-    }
-
-    /**
-     * Set actividadComercialViviendaId
-     *
-     * @param integer $actividadComercialViviendaId
-     * @return RegistroSocioeconomico
-     */
-    public function setActividadComercialViviendaId($actividadComercialViviendaId)
-    {
-        $this->actividadComercialViviendaId = $actividadComercialViviendaId;
-
-        return $this;
-    }
-
-    /**
-     * Get actividadComercialViviendaId
-     *
-     * @return integer 
-     */
-    public function getActividadComercialViviendaId()
-    {
-        return $this->actividadComercialViviendaId;
     }
 
     /**
@@ -608,52 +540,7 @@ class RegistroSocioeconomico
         return $this->enfermosTerminales;
     }
 
-    /**
-     * Set discapacitados
-     *
-     * @param string $discapacitados
-     * @return RegistroSocioeconomico
-     */
-    public function setDiscapacitados($discapacitados)
-    {
-        $this->discapacitados = $discapacitados;
-
-        return $this;
-    }
-
-    /**
-     * Get discapacitados
-     *
-     * @return string 
-     */
-    public function getDiscapacitados()
-    {
-        return $this->discapacitados;
-    }
-
-    /**
-     * Set terceraEdad
-     *
-     * @param string $terceraEdad
-     * @return RegistroSocioeconomico
-     */
-    public function setTerceraEdad($terceraEdad)
-    {
-        $this->terceraEdad = $terceraEdad;
-
-        return $this;
-    }
-
-    /**
-     * Get terceraEdad
-     *
-     * @return string 
-     */
-    public function getTerceraEdad()
-    {
-        return $this->terceraEdad;
-    }
-
+   
     /**
      * Set ayudaSalud
      *
@@ -1023,29 +910,6 @@ class RegistroSocioeconomico
     }
 
     /**
-     * Set sistemaElectrico
-     *
-     * @param string $sistemaElectrico
-     * @return RegistroSocioeconomico
-     */
-    public function setSistemaElectrico($sistemaElectrico)
-    {
-        $this->sistemaElectrico = $sistemaElectrico;
-
-        return $this;
-    }
-
-    /**
-     * Get sistemaElectrico
-     *
-     * @return string 
-     */
-    public function getSistemaElectrico()
-    {
-        return $this->sistemaElectrico;
-    }
-
-    /**
      * Set medidor
      *
      * @param string $medidor
@@ -1115,29 +979,6 @@ class RegistroSocioeconomico
     }
 
     /**
-     * Set mecanismoInformacionId
-     *
-     * @param integer $mecanismoInformacionId
-     * @return RegistroSocioeconomico
-     */
-    public function setMecanismoInformacionId($mecanismoInformacionId)
-    {
-        $this->mecanismoInformacionId = $mecanismoInformacionId;
-
-        return $this;
-    }
-
-    /**
-     * Get mecanismoInformacionId
-     *
-     * @return integer 
-     */
-    public function getMecanismoInformacionId()
-    {
-        return $this->mecanismoInformacionId;
-    }
-
-    /**
      * Set organizacionesCounitarias
      *
      * @param string $organizacionesCounitarias
@@ -1160,50 +1001,62 @@ class RegistroSocioeconomico
         return $this->organizacionesCounitarias;
     }
 
+    
+
     /**
-     * Set fecha
+     * Set familias
      *
-     * @param \DateTime $fecha
+     * @param \Censo\CensoBundle\Entity\Familias $familias
      * @return RegistroSocioeconomico
      */
-    public function setFecha($fecha)
+    public function setFamilias(\Censo\CensoBundle\Entity\Familias $familias = null)
     {
-        $this->fecha = $fecha;
+        $this->familias = $familias;
 
         return $this;
     }
 
     /**
-     * Get fecha
+     * Get familias
      *
-     * @return \DateTime 
+     * @return \Censo\CensoBundle\Entity\Familias 
      */
-    public function getFecha()
+    public function getFamilias()
     {
-        return $this->fecha;
+        return $this->familias;
     }
 
     /**
-     * Set registroSocioeconomico
+     * Add actividadComercial
      *
-     * @param string $registroSocioeconomico
+     * @param \Censo\CensoBundle\Entity\ActividadComercialVivienda $actividadComercial
      * @return RegistroSocioeconomico
      */
-    public function setRegistroSocioeconomico($registroSocioeconomico)
+    public function addActividadComercial(\Censo\CensoBundle\Entity\ActividadComercialVivienda $actividadComercial)
     {
-        $this->registroSocioeconomico = $registroSocioeconomico;
+        $this->actividadComercial[] = $actividadComercial;
 
         return $this;
     }
 
     /**
-     * Get registroSocioeconomico
+     * Remove actividadComercial
      *
-     * @return string 
+     * @param \Censo\CensoBundle\Entity\ActividadComercialVivienda $actividadComercial
      */
-    public function getRegistroSocioeconomico()
+    public function removeActividadComercial(\Censo\CensoBundle\Entity\ActividadComercialVivienda $actividadComercial)
     {
-        return $this->registroSocioeconomico;
+        $this->actividadComercial->removeElement($actividadComercial);
+    }
+
+    /**
+     * Get actividadComercial
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getActividadComercial()
+    {
+        return $this->actividadComercial;
     }
 
     /**
@@ -1342,29 +1195,6 @@ class RegistroSocioeconomico
     public function getTipoViviendas()
     {
         return $this->tipoViviendas;
-    }
-
-    /**
-     * Set familias
-     *
-     * @param \Censo\CensoBundle\Entity\Familias $familias
-     * @return RegistroSocioeconomico
-     */
-    public function setFamilias(\Censo\CensoBundle\Entity\Familias $familias = null)
-    {
-        $this->familias = $familias;
-
-        return $this;
-    }
-
-    /**
-     * Get familias
-     *
-     * @return \Censo\CensoBundle\Entity\Familias 
-     */
-    public function getFamilias()
-    {
-        return $this->familias;
     }
 
     /**
@@ -1632,39 +1462,6 @@ class RegistroSocioeconomico
     }
 
     /**
-     * Add actividadComercial
-     *
-     * @param \Censo\CensoBundle\Entity\ActividadComercialVivienda $actividadComercial
-     * @return RegistroSocioeconomico
-     */
-    public function addActividadComercial(\Censo\CensoBundle\Entity\ActividadComercialVivienda $actividadComercial)
-    {
-        $this->actividadComercial[] = $actividadComercial;
-
-        return $this;
-    }
-
-    /**
-     * Remove actividadComercial
-     *
-     * @param \Censo\CensoBundle\Entity\ActividadComercialVivienda $actividadComercial
-     */
-    public function removeActividadComercial(\Censo\CensoBundle\Entity\ActividadComercialVivienda $actividadComercial)
-    {
-        $this->actividadComercial->removeElement($actividadComercial);
-    }
-
-    /**
-     * Get actividadComercial
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getActividadComercial()
-    {
-        return $this->actividadComercial;
-    }
-
-    /**
      * Add enseres
      *
      * @param \Censo\CensoBundle\Entity\Enseres $enseres
@@ -1730,36 +1527,5 @@ class RegistroSocioeconomico
         return $this->tipoParedes;
     }
 
-    /**
-     * Add preguntas
-     *
-     * @param \Censo\CensoBundle\Entity\Preguntas $preguntas
-     * @return RegistroSocioeconomico
-     */
-    public function addPregunta(\Censo\CensoBundle\Entity\Preguntas $preguntas)
-    {
-        $this->preguntas[] = $preguntas;
-
-        return $this;
-    }
-
-    /**
-     * Remove preguntas
-     *
-     * @param \Censo\CensoBundle\Entity\Preguntas $preguntas
-     */
-    public function removePregunta(\Censo\CensoBundle\Entity\Preguntas $preguntas)
-    {
-        $this->preguntas->removeElement($preguntas);
-    }
-
-    /**
-     * Get preguntas
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getPreguntas()
-    {
-        return $this->preguntas;
-    }
+    
 }

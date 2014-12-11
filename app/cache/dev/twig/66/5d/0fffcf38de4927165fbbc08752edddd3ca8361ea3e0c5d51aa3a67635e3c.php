@@ -62,7 +62,7 @@ class __TwigTemplate_665d0fffcf38de4927165fbbc08752edddd3ca8361ea3e0c5d51aa3a676
                         <a href=\"";
             // line 22
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("servicioscomunales_show", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id", array()))), "html", null, true);
-            echo "\">show</a>
+            echo "\">Mostrar</a>
                     </li>
                     <li>
                         <a href=\"";
@@ -88,7 +88,7 @@ class __TwigTemplate_665d0fffcf38de4927165fbbc08752edddd3ca8361ea3e0c5d51aa3a676
         // line 36
         echo $this->env->getExtension('routing')->getPath("servicioscomunales_new");
         echo "\">
-                Create a new entry
+                Ingresar
             </a>
         </li>
     </ul>

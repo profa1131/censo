@@ -25,7 +25,7 @@ class UsuariosRepository extends EntityRepository implements UserProviderInterfa
             // The Query::getSingleResult() method throws an exception
             // if there is no record matching the criteria.
             $user = $q->getSingleResult();
-        } catch (NoResultException $e) {
+                    } catch (NoResultException $e) {
             $message = sprintf(
                 'Unable to find an active admin AcmeUserBundle:User object identified by "%s".',
                 $username

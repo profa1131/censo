@@ -51,22 +51,7 @@ class RegistroSocioeconomicoType extends AbstractType
                     'required' => true,
                     'expanded' => true
                 ))
-            ->add('discapacitados', 'choice', array(
-                    'choices' => array(
-                        'si' => 'SI',
-                        'no' => 'NO'
-                    ),
-                    'required' => true,
-                    'expanded' => true
-                ))
-            ->add('terceraEdad', 'choice', array(
-                    'choices' => array(
-                        'si' => 'SI',
-                        'no' => 'NO'
-                    ),
-                    'required' => true,
-                    'expanded' => true
-                ))
+            
             ->add('ayudaSalud', 'choice', array(
                     'choices' => array(
                         'si' => 'SI',
@@ -177,14 +162,7 @@ class RegistroSocioeconomicoType extends AbstractType
                     'attr' => array('class' => 'form-control',
                         'placeholder' => 'Precio del Cilindro'),
                 ))
-            ->add('sistemaElectrico', 'choice', array(
-                    'choices' => array(
-                        'si' => 'SI',
-                        'no' => 'NO'
-                    ),
-                    'required' => true,
-                    'expanded' => true
-                ))
+            
             ->add('medidor', 'choice', array(
                     'choices' => array(
                         'si' => 'SI',
@@ -207,20 +185,14 @@ class RegistroSocioeconomicoType extends AbstractType
                     'attr' => array('class' => 'form-control',
                         'placeholder' => 'Cuantos Bombillos Necesita'),
                 ))
-            ->add('mecanismoInformacionId', 'text', array(
-                    'label' => '* mecanismos de Informacion',
-                    'required' => 'true',
-                    'attr' => array('class' => 'form-control',
-                        'placeholder' => 'Mecanismos de Informacion'),
-                ))
+            
             ->add('organizacionesCounitarias', 'text', array(
                     'label' => '* Organizaciones Comunitarias',
                     'required' => 'true',
                     'attr' => array('class' => 'form-control',
                         'placeholder' => 'Organizaciones Comunitarias'),
                 ))
-            ->add('fecha')
-            ->add('registroSocioeconomico')
+            
             ->add('recoleccionBasura', null, array(
                 'label'=>'* Recoleccion de Basura',               
                 'empty_value'=> 'Seleccione',
@@ -333,14 +305,7 @@ class RegistroSocioeconomicoType extends AbstractType
                 'empty_value'=> 'Seleccione',
                 
             ))
-            ->add('preguntas', null, array(
-                'label'=>'* Preguntas',
-                    'expanded'=> true,
-                    'multiple'=> true,
-                'empty_value'=> 'Seleccione',
-                
-            ))
-        ;
+                    ;
     }
     
     /**

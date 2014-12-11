@@ -1,5 +1,4 @@
 <?php
-
 namespace Censo\CensoBundle\Entity;
 
 use Symfony\Component\Security\Core\User\AdvancedUserInterface;
@@ -24,6 +23,16 @@ class Usuarios implements AdvancedUserInterface, \Serializable
      */
     private $id;
     
+    /**
+     * @var \Parroquias
+     *
+     * @ORM\ManyToOne(targetEntity="Parroquias")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="parroquia_id", referencedColumnName="id")
+     * })
+     */
+    private $parroquia;
+    
     
     /**
      * @var string
@@ -31,14 +40,14 @@ class Usuarios implements AdvancedUserInterface, \Serializable
      * @ORM\Column(name="username", type="string", length=255, nullable=false)
      */
     private $username;
-
+    
     /**
      * @var string
      *
      * @ORM\Column(name="salt", type="string", length=32, nullable=false)
      */
     private $salt;
-
+    
     /**
      * @var string
      *
@@ -60,8 +69,6 @@ class Usuarios implements AdvancedUserInterface, \Serializable
      */
     private $isActive;
 
-    
-
     /**
      * @var string
      *
@@ -69,54 +76,14 @@ class Usuarios implements AdvancedUserInterface, \Serializable
      */
     private $nombre;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="apellido", type="string", length=255, nullable=false)
-     */
-    private $apellido;
-
+    
     /**
      * @var string
      *
      * @ORM\Column(name="cedula", type="string", length=255, nullable=false)
      */
-    private $cedula;
+    private $codigo;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="tipo_empleado", type="string", length=255, nullable=false)
-     */
-    private $tipoEmpleado;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="departamento", type="string", length=255, nullable=false)
-     */
-    private $departamento;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="cargo", type="string", length=255, nullable=false)
-     */
-    private $cargo;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="sede", type="string", length=255, nullable=false)
-     */
-    private $sede;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="fecha_ingreso", type="date", nullable=false)
-     */
-    private $fechaIngreso;
     
     /**
      * @var \DateTime
@@ -146,14 +113,14 @@ class Usuarios implements AdvancedUserInterface, \Serializable
      *
      * @ORM\Column(name="fecha_registro", type="datetime", nullable=true)
      */
-    private $fechaRegistro;
+    private $fechaIngreso;
     
       /**
      * @var string
      *
      * @ORM\Column(name="telefono_oficina", type="string", length=255, nullable=true)
      */
-    private $telefonoOficina;
+    private $telefono;
     
       /**
      * @var string
@@ -168,10 +135,9 @@ class Usuarios implements AdvancedUserInterface, \Serializable
     public function __construct()
     {
         $this->group = new ArrayCollection();
-        
-        $this->isActive = FALSE;
         $this->salt = md5(uniqid(null, true));
-    }
+        $this->isActive = FALSE;
+           }
 
 
     /**
@@ -299,222 +265,7 @@ class Usuarios implements AdvancedUserInterface, \Serializable
         return $this->isActive;
     }
 
-    
-
-   
-
-    
-
     /**
-     * Set nombre
-     *
-     * @param string $nombre
-     * @return Usuarios
-     */
-    public function setNombre($nombre)
-    {
-        $this->nombre = $nombre;
-
-        return $this;
-    }
-
-    /**
-     * Get nombre
-     *
-     * @return string 
-     */
-    public function getNombre()
-    {
-        return $this->nombre;
-    }
-
-    /**
-     * Set apellido
-     *
-     * @param string $apellido
-     * @return Usuarios
-     */
-    public function setApellido($apellido)
-    {
-        $this->apellido = $apellido;
-
-        return $this;
-    }
-
-    /**
-     * Get apellido
-     *
-     * @return string 
-     */
-    public function getApellido()
-    {
-        return $this->apellido;
-    }
-
-    /**
-     * Set cedula
-     *
-     * @param string $cedula
-     * @return Usuarios
-     */
-    public function setCedula($cedula)
-    {
-        $this->cedula = $cedula;
-
-        return $this;
-    }
-
-    /**
-     * Get cedula
-     *
-     * @return string 
-     */
-    public function getCedula()
-    {
-        return $this->cedula;
-    }
-
-    /**
-     * Set tipoEmpleado
-     *
-     * @param string $tipoEmpleado
-     * @return Usuarios
-     */
-    public function setTipoEmpleado($tipoEmpleado)
-    {
-        $this->tipoEmpleado = $tipoEmpleado;
-
-        return $this;
-    }
-
-    /**
-     * Get tipoEmpleado
-     *
-     * @return string 
-     */
-    public function getTipoEmpleado()
-    {
-        return $this->tipoEmpleado;
-    }
-
-    /**
-     * Set departamento
-     *
-     * @param string $departamento
-     * @return Usuarios
-     */
-    public function setDepartamento($departamento)
-    {
-        $this->departamento = $departamento;
-
-        return $this;
-    }
-
-    /**
-     * Get departamento
-     *
-     * @return string 
-     */
-    public function getDepartamento()
-    {
-        return $this->departamento;
-    }
-
-    /**
-     * Set cargo
-     *
-     * @param string $cargo
-     * @return Usuarios
-     */
-    public function setCargo($cargo)
-    {
-        $this->cargo = $cargo;
-
-        return $this;
-    }
-
-    /**
-     * Get cargo
-     *
-     * @return string 
-     */
-    public function getCargo()
-    {
-        return $this->cargo;
-    }
-
-    /**
-     * Set sede
-     *
-     * @param string $sede
-     * @return Usuarios
-     */
-    public function setSede($sede)
-    {
-        $this->sede = $sede;
-
-        return $this;
-    }
-
-    /**
-     * Get sede
-     *
-     * @return string 
-     */
-    public function getSede()
-    {
-        return $this->sede;
-    }
-
-    /**
-     * Set fechaIngreso
-     *
-     * @param \DateTime $fechaIngreso
-     * @return Usuarios
-     */
-    public function setFechaIngreso($fechaIngreso)
-    {
-        $this->fechaIngreso = $fechaIngreso;
-
-        return $this;
-    }
-
-    /**
-     * Get fechaIngreso
-     *
-     * @return \DateTime 
-     */
-    public function getFechaIngreso()
-    {
-        return $this->fechaIngreso;
-    }
-    
-    /**
-     * Set fechaRegistro
-     *
-     * @param \DateTime $fechaRegistro
-     * @return Usuarios
-     */
-    public function setFechaRegistro($fechaRegistro)
-    {
-        $this->fechaRegistro = $fechaRegistro;
-
-        return $this;
-    }
-
-    /**
-     * Get fechaRegistro
-     *
-     * @return \DateTime 
-     */
-    public function getFechaRegistro()
-    {
-        return $this->fechaRegistro;
-    }
-
-    /**
-     * Add group
-     *
      * @param \Ceso\CensoBundle\Entity\Groups $group
      * @return Usuarios
      */
@@ -591,29 +342,6 @@ class Usuarios implements AdvancedUserInterface, \Serializable
     }
 
     /**
-     * Set telefonoOficina
-     *
-     * @param string $telefonoOficina
-     * @return Usuarios
-     */
-    public function setTelefonoOficina($telefonoOficina)
-    {
-        $this->telefonoOficina = $telefonoOficina;
-
-        return $this;
-    }
-
-    /**
-     * Get telefonoOficina
-     *
-     * @return string 
-     */
-    public function getTelefonoOficina()
-    {
-        return $this->telefonoOficina;
-    }
-
-    /**
      * Set telefonoMovil
      *
      * @param string $telefonoMovil
@@ -660,68 +388,122 @@ class Usuarios implements AdvancedUserInterface, \Serializable
     }
 
     /**
-     * Add solicituds
+     * Set codigo
      *
-     * @param \Censo\CensoBundle\Entity\Solicitud $solicituds
+     * @param string $codigo
      * @return Usuarios
      */
-    public function addSolicitud(\Censo\CensoBundle\Entity\Solicitud $solicituds)
+    public function setCodigo($codigo)
     {
-        $this->solicituds[] = $solicituds;
+        $this->codigo = $codigo;
 
         return $this;
     }
 
     /**
-     * Remove solicituds
+     * Get codigo
      *
-     * @param \Censo\CensoBundle\Entity\Solicitud $solicituds
+     * @return string 
      */
-    public function removeSolicitud(\Censo\CensoBundle\Entity\Solicitud $solicituds)
+    public function getCodigo()
     {
-        $this->solicituds->removeElement($solicituds);
+        return $this->codigo;
     }
 
     /**
-     * Get solicituds
+     * Set telefono
      *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getSolicituds()
-    {
-        return $this->solicituds;
-    }
-
-    /**
-     * Add solicitudes
-     *
-     * @param \Censo\SolicitudBundle\Solicitud $solicitudes
+     * @param string $telefono
      * @return Usuarios
      */
-    public function addSolicitude(\Censo\SolicitudBundle\Solicitud $solicitudes)
+    public function setTelefono($telefono)
     {
-        $this->solicitudes[] = $solicitudes;
+        $this->telefono = $telefono;
 
         return $this;
     }
 
     /**
-     * Remove solicitudes
+     * Get telefono
      *
-     * @param \Censo\SolicitudBundle\Solicitud $solicitudes
+     * @return string 
      */
-    public function removeSolicitude(\Censo\SolicitudBundle\Solicitud $solicitudes)
+    public function getTelefono()
     {
-        $this->solicitudes->removeElement($solicitudes);
+        return $this->telefono;
     }
 
     /**
-     * Get solicitudes
+     * Set parroquia
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @param \Censo\CensoBundle\Entity\Parroquias $parroquia
+     * @return Usuarios
      */
-    public function getSolicitudes()
+    public function setParroquia(\Censo\CensoBundle\Entity\Parroquias $parroquia = null)
     {
-        return $this->solicitudes;
+        $this->parroquia = $parroquia;
+
+        return $this;
+    }
+
+    /**
+     * Get parroquia
+     *
+     * @return \Censo\CensoBundle\Entity\Parroquias 
+     */
+    public function getParroquia()
+    {
+        return $this->parroquia;
+    }
+ 
+     public function __tostirng() {
+        return $this->nombre;
+    }
+    
+
+    /**
+     * Set nombre
+     *
+     * @param string $nombre
+     * @return Usuarios
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+
+        return $this;
+    }
+
+    /**
+     * Get nombre
+     *
+     * @return string 
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+
+    /**
+     * Set fechaIngreso
+     *
+     * @param \DateTime $fechaIngreso
+     * @return Usuarios
+     */
+    public function setFechaIngreso($fechaIngreso)
+    {
+        $this->fechaIngreso = $fechaIngreso;
+
+        return $this;
+    }
+
+    /**
+     * Get fechaIngreso
+     *
+     * @return \DateTime 
+     */
+    public function getFechaIngreso()
+    {
+        return $this->fechaIngreso;
     }
 }

@@ -28,7 +28,7 @@ class __TwigTemplate_a1fe3ce37f4ffe231b9696ac65f33b84040831e29e209b3176e83216272
     public function block_body($context, array $blocks = array())
     {
         // line 4
-        echo "<h1>Transportes list</h1>
+        echo "<h1>Transportes </h1>
 
     <table class=\"records_list\">
         <thead>
@@ -62,13 +62,13 @@ class __TwigTemplate_a1fe3ce37f4ffe231b9696ac65f33b84040831e29e209b3176e83216272
                         <a href=\"";
             // line 22
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("transportes_show", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id", array()))), "html", null, true);
-            echo "\">show</a>
+            echo "\">Mostrar</a>
                     </li>
                     <li>
                         <a href=\"";
             // line 25
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("transportes_edit", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id", array()))), "html", null, true);
-            echo "\">edit</a>
+            echo "\">Editar</a>
                     </li>
                 </ul>
                 </td>
@@ -88,7 +88,7 @@ class __TwigTemplate_a1fe3ce37f4ffe231b9696ac65f33b84040831e29e209b3176e83216272
         // line 36
         echo $this->env->getExtension('routing')->getPath("transportes_new");
         echo "\">
-                Create a new entry
+                Ingresar
             </a>
         </li>
     </ul>

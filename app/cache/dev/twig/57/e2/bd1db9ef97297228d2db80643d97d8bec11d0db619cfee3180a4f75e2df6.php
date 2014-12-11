@@ -28,7 +28,7 @@ class __TwigTemplate_57e2bd1db9ef97297228d2db80643d97d8bec11d0db619cfee3180a4f75
     public function block_body($context, array $blocks = array())
     {
         // line 4
-        echo "<h1>Telefonias creation</h1>
+        echo "<h1>Telefonias </h1>
 
     ";
         // line 6
@@ -41,7 +41,7 @@ class __TwigTemplate_57e2bd1db9ef97297228d2db80643d97d8bec11d0db619cfee3180a4f75
         // line 10
         echo $this->env->getExtension('routing')->getPath("telefonias");
         echo "\">
-            Back to the list
+            Volver a la Lista
         </a>
     </li>
 </ul>

@@ -1,41 +1,54 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Vocerias list</h1>
+    <h1 class="page-header, fi-torsos-all-female">Vocerias</h1>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Datos de Vocerias
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Nombre</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
 
-    <table class="records_list">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <tbody>
         {% for entity in entities %}
             <tr>
                 <td><a href="{{ path('vocerias_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.nombre }}</td>
                 <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('vocerias_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('vocerias_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
+                    <ul>
+                        <li>
+                            <a href="{{ path('vocerias_show', { 'id': entity.id }) }}">Mostrar</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('vocerias_edit', { 'id': entity.id }) }}">Editar</a>
+                        </li>
+                    </ul>
                 </td>
             </tr>
         {% endfor %}
-        </tbody>
-    </table>
+    </tbody>
+</table>
 
-        <ul>
-        <li>
-            <a href="{{ path('vocerias_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
-    {% endblock %}
+<ul>
+    <li >
+         <a class="btn btn-success col-md-12" href="{{ path('vocerias_new') }}">Agregar nueva Vocerias </a>
+        
+    </li>
+</ul>
+{% endblock %}

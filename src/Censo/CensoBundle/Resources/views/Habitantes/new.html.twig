@@ -2,6 +2,7 @@
 
 {% block body -%}
   
+
     <h1 class="page-header, fi-torsos-all-female">Agregar Habitantes</h1>
     <ul class="record_actions"></ul>
     <div class="col-lg-12">
@@ -10,15 +11,188 @@
                 Agregar Habitantes
             </div>
             <div class="panel-body">
-       
-    {{ form(form) }}
-    
-    
-    <br> 
-    <br>
-    <br>
-    <a class="col-md-12 btn btn-primary" href="{{ path('habitantes') }}">Volver a la Lista </a>
-    </div>
- </div>
-  
-{% endblock %}
+
+        {{ form_start(form,{'attr':{'onSubmit':'return formHabitantes()'}}) }}
+        {{ form_errors(form) }}
+        <div class="form-group col-md-4">       
+        {{ form_label(form.familias) }}
+        {{ form_errors(form.familias) }}
+        {{ form_widget(form.familias) }}
+        </div>
+        <div class="form-group col-md-4">       
+        {{ form_label(form.jefeGrupoFamiliar) }}
+        {{ form_errors(form.jefeGrupoFamiliar) }}
+        {{ form_widget(form.jefeGrupoFamiliar) }}
+        </div>
+        <div class="form-group col-md-4 ">       
+        {{ form_label(form.parentesco) }}
+        {{ form_errors(form.parentesco) }}
+        {{ form_widget(form.parentesco) }}
+        </div>
+         <div class="form-group col-md-4">       
+        {{ form_label(form.nacionalidad) }}
+        {{ form_errors(form.nacionalidad) }}
+        {{ form_widget(form.nacionalidad) }}
+        </div>
+         <div class="form-group col-md-4">       
+        {{ form_label(form.cedula) }}
+        {{ form_errors(form.cedula) }}
+        {{ form_widget(form.cedula) }}
+        </div>
+         <div class="form-group col-md-4">       
+        {{ form_label(form.fechaNacimiento) }}
+        {{ form_errors(form.fechaNacimiento) }}
+        {{ form_widget(form.fechaNacimiento) }}
+        </div>
+         <div class="form-group col-md-6">       
+        {{ form_label(form.nombre) }}
+        {{ form_errors(form.nombre) }}
+        {{ form_widget(form.nombre) }}
+        </div>
+         <div class="form-group col-md-6">       
+        {{ form_label(form.segundoNombre) }}
+        {{ form_errors(form.segundoNombre) }}
+        {{ form_widget(form.segundoNombre) }}
+        </div>
+         <div class="form-group col-md-6">       
+        {{ form_label(form.apellido) }}
+        {{ form_errors(form.apellido) }}
+        {{ form_widget(form.apellido) }}
+        </div>
+         <div class="form-group col-md-6">       
+        {{ form_label(form.segundoApellido) }}
+        {{ form_errors(form.segundoApellido) }}
+        {{ form_widget(form.segundoApellido) }}
+        </div>
+        <div class="form-group col-md-4">       
+        {{ form_label(form.edoCivil) }}
+        {{ form_errors(form.edoCivil) }}
+        {{ form_widget(form.edoCivil) }}
+        </div>
+         <div class="form-group col-md-4">       
+        {{ form_label(form.genero) }}
+        {{ form_errors(form.genero) }}
+        {{ form_widget(form.genero) }}
+        </div>
+         <div class="form-group col-md-4">       
+        {{ form_label(form.embarazo) }}
+        {{ form_errors(form.embarazo) }}
+        {{ form_widget(form.embarazo) }}
+        </div>
+         <div class="form-group col-md-4">       
+        {{ form_label(form.gradoDeInstruccion) }}
+        {{ form_errors(form.gradoDeInstruccion) }}
+        {{ form_widget(form.gradoDeInstruccion) }}
+        </div>
+        <div class="form-group col-md-4">       
+        {{ form_label(form.profaciones) }}
+        {{ form_errors(form.profaciones) }}
+        {{ form_widget(form.profaciones) }}
+        </div>
+         <div class="form-group col-md-4">       
+        {{ form_label(form.empleo) }}
+        {{ form_errors(form.empleo) }}
+        {{ form_widget(form.empleo) }}
+        </div>
+        <div class="form-group col-md-4">       
+        {{ form_label(form.pensionado) }}
+        {{ form_errors(form.pensionado) }}
+        {{ form_widget(form.pensionado) }}
+        </div>
+        
+        <div class="form-group col-md-4">       
+        {{ form_label(form.areasDeTrabajos) }}
+        {{ form_errors(form.areasDeTrabajos) }}
+        {{ form_widget(form.areasDeTrabajos) }}
+        </div>
+         <div class="form-group col-md-4">       
+        {{ form_label(form.leyPoliticaHabitacional) }}
+        {{ form_errors(form.leyPoliticaHabitacional) }}
+        {{ form_widget(form.leyPoliticaHabitacional) }}
+        </div>
+        <div class="form-group col-md-4">       
+        {{ form_label(form.tipoDeIngreso) }}
+        {{ form_errors(form.tipoDeIngreso) }}
+        {{ form_widget(form.tipoDeIngreso) }}
+        </div>
+         <div class="form-group col-md-4">       
+        {{ form_label(form.ingresoMensual) }}
+        {{ form_errors(form.ingresoMensual) }}
+        {{ form_widget(form.ingresoMensual) }}
+        </div>
+        
+        <div class="form-group col-md-4">       
+        {{ form_label(form.telefonoCelular) }}
+        {{ form_errors(form.telefonoCelular) }}
+        {{ form_widget(form.telefonoCelular) }}
+        </div>
+        <div class="form-group col-md-4">       
+        {{ form_label(form.telefonoOficina) }}
+        {{ form_errors(form.telefonoOficina) }}
+        {{ form_widget(form.telefonoOficina) }}
+        </div>
+         <div class="form-group col-md-4">       
+        {{ form_label(form.correoElectronico) }}
+        {{ form_errors(form.correoElectronico) }}
+        {{ form_widget(form.correoElectronico) }}
+        </div><div class="form-group col-md-4">       
+        {{ form_label(form.cne) }}
+        {{ form_errors(form.cne) }}
+        {{ form_widget(form.cne) }}
+        </div>
+         <div class="form-group col-md-4">       
+        {{ form_label(form.tiempoEnLaComunidad) }}
+        {{ form_errors(form.tiempoEnLaComunidad) }}
+        {{ form_widget(form.tiempoEnLaComunidad) }}
+        </div>
+        
+         <div class="form-group col-md-4">       
+        {{ form_label(form.participaOrganizacion) }}
+        {{ form_errors(form.participaOrganizacion) }}
+        {{ form_widget(form.participaOrganizacion) }}
+        </div>
+         
+         
+         <div class="form-group col-md-4">       
+        {{ form_label(form.vocerias) }}
+        {{ form_errors(form.vocerias) }}
+        {{ form_widget(form.vocerias) }}
+        </div>
+         <div class="form-group col-md-12">         
+        {{ form_label(form.enfermedades) }}
+        {{ form_errors(form.enfermedades) }}
+        {{ form_widget(form.enfermedades) }}
+         </div>
+         <div class="form-group col-md-6">       
+        {{ form_label(form.discapacidades) }}
+        {{ form_errors(form.discapacidades) }}
+        {{ form_widget(form.discapacidades) }}
+        </div>
+         
+        
+              
+          {{ form_end(form) }}
+          <div>
+              <a class="col-md-12 btn btn-primary" href="{{ path('habitantes') }}">Volver a la Lista </a>
+          </div>  
+          </div>
+          
+        </div>
+
+    {% endblock %}
+    {% block javascripts %}      
+        <script type="text/javascript">
+            $(document).on('ready', function () {                
+               
+        $('#censo_censobundle_habitantes_telefonoCelular').mask("(0999) 999-9999");
+        $('#censo_censobundle_habitantes_cedula').mask("999999999");
+        $('#censo_censobundle_habitantes_telefonoOficina').mask("(0999) 999-9999");
+        $('#censo_censobundle_habitantes_ingresoMensual').mask("000.000.000.000.000 bs");
+                    
+                
+            });
+                
+            
+        </script>    
+    {% endblock %}
+

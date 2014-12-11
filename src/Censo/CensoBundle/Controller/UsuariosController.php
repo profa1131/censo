@@ -49,6 +49,9 @@ class UsuariosController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
+            $this->setSecurePassword($entity);
+            $entity->setFechaIngreso(new \DateTime($entity->getFechaIngreso()));
+            //echo ("<pre>"); debug_zval_dump($request); echo ("</pre>"); die;
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
@@ -76,7 +79,7 @@ class UsuariosController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Agregar'));
 
         return $form;
     }
@@ -190,7 +193,15 @@ class UsuariosController extends Controller
         $editForm = $this->createEditForm($entity);
         $editForm->handleRequest($request);
 
-        if ($editForm->isValid()) {
+        //obtiene la contraseña actual -----------------------
+        $current_pass = $entity->getPassword();
+        
+            if ($editForm->isValid()) {
+            
+            //evalua si la contraseña fue modificada: ------------------------
+            
+                $this->setSecurePassword($entity);
+            
             $em->flush();
 
             return $this->redirect($this->generateUrl('usuarios_edit', array('id' => $id)));
@@ -243,5 +254,12 @@ class UsuariosController extends Controller
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
         ;
+    }
+    private function setSecurePassword(&$entity) {
+        //$entity->setSalt(md5(time()));
+        $encoder = new \Symfony\Component\Security\Core\Encoder\MessageDigestPasswordEncoder('sha512', true, 10);
+        $password = $encoder->encodePassword($entity->getPassword(), $entity->getSalt());
+        //debug_zval_dump($password); die;
+        $entity->setPassword($password);
     }
 }

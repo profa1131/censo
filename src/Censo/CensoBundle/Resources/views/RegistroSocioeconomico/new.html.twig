@@ -10,61 +10,264 @@
             </div>
             <div class="panel-body">
                 <p>
-                    {{ form(form) }}
-            <a class="btn btn-primary" href="{{path('registrosocioeconomico') }}">Volver a la Lista </a>                 
+                    
+                    {{ form_start(form)}}
+        {{ form_errors(form) }}
+        <div class="form-group col-md-6">         
+        {{ form_label(form.familias) }}
+        {{ form_errors(form.familias) }}
+        {{ form_widget(form.familias) }}
+         </div>
+        <div class="form-group col-md-6">         
+        {{ form_label(form.ingresoFamiliar) }}
+        {{ form_errors(form.ingresoFamiliar) }}
+        {{ form_widget(form.ingresoFamiliar) }}
+         </div>
+                <div class="form-group col-md-6">         
+        {{ form_label(form.tipoViviendas) }}
+        {{ form_errors(form.tipoViviendas) }}
+        {{ form_widget(form.tipoViviendas) }}
+         </div>
+                <div class="form-group col-md-6">         
+        {{ form_label(form.formaTenencias) }}
+        {{ form_errors(form.formaTenencias) }}
+        {{ form_widget(form.formaTenencias) }}
+         </div>
+                     <div class="form-group col-md-12">         
+        {{ form_label(form.tipoTechos) }}
+        {{ form_errors(form.tipoTechos) }}
+        {{ form_widget(form.tipoTechos) }}
+         </div>
+         <div class="form-group col-md-12">         
+        {{ form_label(form.tipoParedes) }}
+        {{ form_errors(form.tipoParedes) }}
+        {{ form_widget(form.tipoParedes) }}
+         </div> 
+         <div class="form-group col-md-12">         
+        {{ form_label(form.enseres) }}
+        {{ form_errors(form.enseres) }}
+        {{ form_widget(form.enseres) }}
+         </div>
+                
+        <div class="form-group col-md-6">         
+        {{ form_label(form.habitacionesVivienda) }}
+        {{ form_errors(form.habitacionesVivienda) }}
+        {{ form_widget(form.habitacionesVivienda) }}
+         </div>  
+                 <div class="form-group col-md-6">         
+        {{ form_label(form.condicionTerreno) }}
+        {{ form_errors(form.condicionTerreno) }}
+        {{ form_widget(form.condicionTerreno) }}
+         </div>
+         <div class="form-group col-md-12">         
+        {{ form_label(form.actividadComercial) }}
+        {{ form_errors(form.actividadComercial) }}
+        {{ form_widget(form.actividadComercial) }}
+         </div>
+         <div class="form-group col-md-4">         
+        {{ form_label(form.aguasBlancas) }}
+        {{ form_errors(form.aguasBlancas) }}
+        {{ form_widget(form.aguasBlancas) }}
+         </div>
+         <div class="form-group col-md-4">         
+        {{ form_label(form.medidorAgua) }}
+        {{ form_errors(form.medidorAgua) }}
+        {{ form_widget(form.medidorAgua) }}
+         </div>
+                <div class="form-group col-md-4">         
+        {{ form_label(form.tanque) }}
+        {{ form_errors(form.tanque) }}
+        {{ form_widget(form.tanque) }}
+         </div>
+                <div class="form-group col-md-4">         
+        {{ form_label(form.ltsTanque) }}
+        {{ form_errors(form.ltsTanque) }}
+        {{ form_widget(form.ltsTanque) }}
+         </div>
+                <div class="form-group col-md-4">         
+        {{ form_label(form.tipoTanque) }}
+        {{ form_errors(form.tipoTanque) }}
+        {{ form_widget(form.tipoTanque) }}
+         </div>
+                <div class="form-group col-md-4">         
+        {{ form_label(form.pipotes) }}
+        {{ form_errors(form.pipotes) }}
+        {{ form_widget(form.pipotes) }}
+         </div>
+                <div class="form-group col-md-6">         
+        {{ form_label(form.cuantos) }}
+        {{ form_errors(form.cuantos) }}
+        {{ form_widget(form.cuantos) }}
+         </div>
+                <div class="form-group col-md-6">         
+        {{ form_label(form.tipoPipotes) }}
+        {{ form_errors(form.tipoPipotes) }}
+        {{ form_widget(form.tipoPipotes) }}
+         </div>
+         
+                <div class="form-group col-md-4">         
+        {{ form_label(form.gas) }}
+        {{ form_errors(form.gas) }}
+        {{ form_widget(form.gas) }}
+         </div>
+         <div class="form-group col-md-4">         
+        {{ form_label(form.medidor) }}
+        {{ form_errors(form.medidor) }}
+        {{ form_widget(form.medidor) }}
+         </div>
+                <div class="form-group col-md-4">         
+        {{ form_label(form.empresaGas) }}
+        {{ form_errors(form.empresaGas) }}
+        {{ form_widget(form.empresaGas) }}
+         </div>
+                <div class="form-group col-md-6">         
+        {{ form_label(form.cantidadCilindros) }}
+        {{ form_errors(form.cantidadCilindros) }}
+        {{ form_widget(form.cantidadCilindros) }}
+         </div>
+                <div class="form-group col-md-6">         
+        {{ form_label(form.capacidadCilindro) }}
+        {{ form_errors(form.capacidadCilindro) }}
+        {{ form_widget(form.capacidadCilindro) }}
+         </div>
+                <div class="form-group col-md-6">         
+        {{ form_label(form.duracionCilindro) }}
+        {{ form_errors(form.duracionCilindro) }}
+        {{ form_widget(form.duracionCilindro) }}
+         </div>
+                <div class="form-group col-md-6">         
+        {{ form_label(form.precioCilindro) }}
+        {{ form_errors(form.precioCilindro) }}
+        {{ form_widget(form.precioCilindro) }}
+         </div>
+         
+                <div class="form-group col-md-4">         
+        {{ form_label(form.recoleccionBasura) }}
+        {{ form_errors(form.recoleccionBasura) }}
+        {{ form_widget(form.recoleccionBasura) }}
+         </div>
+                <div class="form-group col-md-4">         
+        {{ form_label(form.aguasServidas) }}
+        {{ form_errors(form.aguasServidas) }}
+        {{ form_widget(form.aguasServidas) }}
+         </div>
+                <div class="form-group col-md-4">         
+        {{ form_label(form.condicionesSalubridad) }}
+        {{ form_errors(form.condicionesSalubridad) }}
+        {{ form_widget(form.condicionesSalubridad) }}
+         </div>
+                <div class="form-group col-md-4">         
+        {{ form_label(form.organizacionesCounitarias) }}
+        {{ form_errors(form.organizacionesCounitarias) }}
+        {{ form_widget(form.organizacionesCounitarias) }}
+         </div>
+         <div class="form-group col-md-4">         
+        {{ form_label(form.bombillosAhorradores) }}
+        {{ form_errors(form.bombillosAhorradores) }}
+        {{ form_widget(form.bombillosAhorradores) }}
+         </div>
+                <div class="form-group col-md-4">         
+        {{ form_label(form.cuantosBobillosNecesita) }}
+        {{ form_errors(form.cuantosBobillosNecesita) }}
+        {{ form_widget(form.cuantosBobillosNecesita) }}
+         </div>
+                
+        <div class="form-group col-md-4">         
+        {{ form_label(form.ninosCalle) }}
+        {{ form_errors(form.ninosCalle) }}
+        {{ form_widget(form.ninosCalle) }}
+         </div>
+                <div class="form-group col-md-4">         
+        {{ form_label(form.indigentes) }}
+        {{ form_errors(form.indigentes) }}
+        {{ form_widget(form.indigentes) }}
+         </div>
+                <div class="form-group col-md-4">         
+        {{ form_label(form.enfermosTerminales) }}
+        {{ form_errors(form.enfermosTerminales) }}
+        {{ form_widget(form.enfermosTerminales) }}
+         </div>
+                
+                <div class="form-group col-md-4">         
+        {{ form_label(form.ayudaSalud) }}
+        {{ form_errors(form.ayudaSalud) }}
+        {{ form_widget(form.ayudaSalud) }}
+         </div>
+                <div class="form-group col-md-4">         
+        {{ form_label(form.ayudaVivienda) }}
+        {{ form_errors(form.ayudaVivienda) }}
+        {{ form_widget(form.ayudaVivienda) }}
+         </div>
+                <div class="form-group col-md-12">         
+        {{ form_label(form.telefonias) }}
+        {{ form_errors(form.telefonias) }}
+        {{ form_widget(form.telefonias) }}
+         </div>
+                <div class="form-group col-md-12">         
+        {{ form_label(form.misiones) }}
+        {{ form_errors(form.misiones) }}
+        {{ form_widget(form.misiones) }}
+         </div>
+                <div class="form-group col-md-12">         
+        {{ form_label(form.transporte) }}
+        {{ form_errors(form.transporte) }}
+        {{ form_widget(form.transporte) }}
+         </div>
+                <div class="form-group col-md-12">         
+        {{ form_label(form.plagas) }}
+        {{ form_errors(form.plagas) }}
+        {{ form_widget(form.plagas) }}
+         </div>
+                <div class="form-group col-md-12">         
+        {{ form_label(form.serviciosComunales) }}
+        {{ form_errors(form.serviciosComunales) }}
+        {{ form_widget(form.serviciosComunales) }}
+         </div>
+           
+                <div class="form-group col-md-12">         
+        {{ form_label(form.mecanismosInformacion) }}
+        {{ form_errors(form.mecanismosInformacion) }}
+        {{ form_widget(form.mecanismosInformacion) }}
+         </div>
+                <div class="form-group col-md-12">         
+        {{ form_label(form.animales) }}
+        {{ form_errors(form.animales) }}
+        {{ form_widget(form.animales) }}
+         </div> 
+                
+                    
+               
+         
+        {{ form_end(form) }}
+        
+            <a class="btn btn-primary col-md-12" href="{{path('registrosocioeconomico') }}">Volver a la Lista </a>                 
                 </p>
             </div>
         </div>
     </div>                    
 {% endblock %}
 {% block footerscript %}
-{{parent()}}
-        <script>
-/*
-            function cambiaMinuscula(valor) {
-                var val = valor;
-                document.getElementById('username').value = val.toLowerCase();
-            }
-*/
-            $(document).ready(function () {
-                $('#verificar').bootstrapValidator({
-                    message: 'This value is not valid',
-                    fields: {
-                        _username: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'La direccion de correo UBV es requerido'
-                                },
-                                emailAddress: {
-                                    message: 'La direccion de correo UBV no es válida, ej: usuario@ubv.edu.ve'
-                                },
-                                regexp: {
-                                    regexp: /^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][ubv]+([.][edu]+)*[.][ve]{2,4}$/, ///^[a-zA-Z0-9_\.]+$/,                                
-                                    message: 'El nombre de usuario sólo puede ser un correo UBV'
-                                }
-
-                            }
-                        },
-                        _password: {
-                            validators: {
-                                stringLength: {
-                                    min: 6,
-                                    max: 15,
-                                    message: 'La contraseña debe tener entre 6 y 15 caracteres'
-                                },
-                                notEmpty: {
-                                    message: 'La contraseña es requerida'
-                                }
-                            }
-                        }
-                    }
-                });
-            });
-
-
-        </script>
-        <!-- Bootstrap validator js -->
-        <script src="{{ asset('bundles/censo/js/bootstrap.min.js')}}"></script>
-        <script src="{{ asset('bundles/censo/js/bootstrapValidator.js')}}"></script>
 {% endblock %}
+{% block javascripts %}      
+        <script type="text/javascript">
+            $(document).on('ready', function () {                
+            $('#censo_censobundle_registrosocioeconomico_ingresoFamiliar').mask("999.999.999.999.999,99 bsf");
+            $('#censo_censobundle_registrosocioeconomico_habitacionesVivienda').mask("999");
+            $('#censo_censobundle_registrosocioeconomico_ltsTanque').mask("999.999 lts");
+            $('#censo_censobundle_registrosocioeconomico_cuantos').mask("999.999");
+            $('#censo_censobundle_registrosocioeconomico_cantidadCilindros').mask("999");
+            $('#censo_censobundle_registrosocioeconomico_capacidadCilindro').mask("999 kg");
+            $('#censo_censobundle_registrosocioeconomico_duracionCilindro').mask("999 Dias");
+            $('#censo_censobundle_registrosocioeconomico_precioCilindro').mask("999 bsf");
+        
+            
+     
+            
+            
+   
+                   
+                
+            });
+        </script>    
+    {% endblock %}
 

@@ -62,13 +62,13 @@ class __TwigTemplate_54b7b704b855e1e955a5f3d201e0b50b6dd6db4062bad4c9a7b4eb4bee6
                         <a href=\"";
             // line 22
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("plagas_show", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id", array()))), "html", null, true);
-            echo "\">show</a>
+            echo "\">Mostrar</a>
                     </li>
                     <li>
                         <a href=\"";
             // line 25
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("plagas_edit", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id", array()))), "html", null, true);
-            echo "\">edit</a>
+            echo "\">Editar</a>
                     </li>
                 </ul>
                 </td>
@@ -88,7 +88,7 @@ class __TwigTemplate_54b7b704b855e1e955a5f3d201e0b50b6dd6db4062bad4c9a7b4eb4bee6
         // line 36
         echo $this->env->getExtension('routing')->getPath("plagas_new");
         echo "\">
-                Create a new entry
+                Ingresar
             </a>
         </li>
     </ul>

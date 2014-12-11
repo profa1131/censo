@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>        
-    <title>UBV</title>            
+    <title>CENSO</title>            
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="{{ asset('bundles/recibo/css/bootstrap.css')}}"
+    <link rel="stylesheet" href="{{ asset('bundles/censo/css/bootstrap.css')}}"
           
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="{{asset('bundles/recibo/css/signin.css')}}"          
+    <link rel="stylesheet" href="{{asset('bundles/censo/css/signin.css')}}"          
     
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />  
     
@@ -79,8 +79,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b7ea', end
             <p>Estimado(a), <b>{{ nombre_completo }}</b>.</p> 
             <p>Este es un sistema de correo automático. Por favor, no responda este mensaje. </p>
             <p>Recibimos una solicitud de cambio de contraseña de su cuenta <b>Intranet</b>. Para completar este proceso por favor presione en el siguiente botón:</p> 
-            <a class="link azulC" href="{{ "http://intranet.ubv.edu.ve/restablecer_contrasenia/" ~ id ~ "/" ~ email}}">Cambiar Contraseña &raquo;</a>                        
-            <p>Si tiene problemas puede ingresar copie el siguiente enlace: <a href="{{ "http://intranet.ubv.edu.ve/restablecer_contrasenia/" ~ id ~ "/" ~ email}}" target="_blank" title="Cambio de Contraseña">{{ "http:/intranet.ubv.edu.ve/restablecer_contrasenia/" ~ id ~ "/" ~ email}}</a></p>
+            <a class="link azulC" href="{{ "#" ~ id ~ "/" ~ email}}">Cambiar Contraseña &raquo;</a>                        
+            <p>Si tiene problemas puede ingresar copie el siguiente enlace: <a href="{{ "#" ~ id ~ "/" ~ email}}" target="_blank" title="Cambio de Contraseña">{{ "#" ~ id ~ "/" ~ email}}</a></p>
             <p>En la mayoría de los programas de correo electrónico el enlace anterior aparecerá como una línea de texto en azul sobre la que puede hacer clic. Si eso no sucede, copie y pegue la dirección en la barra de direcciones de su navegador. </p>                       
             <p><b>Nota:</b> Si no hiciste la solicitud de cambio de contraseña, ignora este mensaje.</p>                        
             <p>Esta es una cuenta de correo no monitoreada. Por favor, no responda ni reenvíe mensajes a esta cuenta.</p>

@@ -43,9 +43,9 @@ class __TwigTemplate_4daae4750fa1fbf0b99f37975f60fe67e596e7191c203832d02ff5ef399
                                     <th>Id</th>
                                     <th>Apellidos</th>
                                     <th>Telefono local</th>
-                                    <th>Direccion</th>
+                                    <th>Numero de Casa</th>
                                     <th>Sector</th>
-                                    <th>Nombre de la comunidad</th>
+                                    <th>Consejo Comunal</th>
                                     <th>Accion</th>
                                 </tr>
                             </thead>
@@ -82,7 +82,7 @@ class __TwigTemplate_4daae4750fa1fbf0b99f37975f60fe67e596e7191c203832d02ff5ef399
             echo "</td>
                 <td>";
             // line 40
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "direccion", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "numeroCasa", array()), "html", null, true);
             echo "</td>
                 <td>";
             // line 41
@@ -90,16 +90,15 @@ class __TwigTemplate_4daae4750fa1fbf0b99f37975f60fe67e596e7191c203832d02ff5ef399
             echo "</td>
                 <td>";
             // line 42
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "nombresComunidad", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "usuarios", array()), "nombre", array()), "html", null, true);
             echo "</td>
-                <td>
-                    <td class=\"print\">
+                <td class=\"print\">
         <a href=\"";
-            // line 45
+            // line 44
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("familias_show", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id", array()))), "html", null, true);
             echo "\"><i class=\"glyphicon glyphicon-zoom-in col-md-4 col-md-4\"></i> </a>
         <a href=\"";
-            // line 46
+            // line 45
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("familias_edit", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id", array()))), "html", null, true);
             echo "\"><i class=\"glyphicon glyphicon-pencil col-md-4 col-md-offset-4\"></i></a>
      </td>
@@ -110,7 +109,7 @@ class __TwigTemplate_4daae4750fa1fbf0b99f37975f60fe67e596e7191c203832d02ff5ef399
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 51
+        // line 50
         echo "    </tbody>
 
 </table>
@@ -137,7 +136,7 @@ class __TwigTemplate_4daae4750fa1fbf0b99f37975f60fe67e596e7191c203832d02ff5ef399
 <ul>
 
     <a class=\"btn btn-success\" href=\"";
-        // line 76
+        // line 75
         echo $this->env->getExtension('routing')->getPath("familias_new");
         echo "\">Agregar nueva Familia </a>
 
@@ -159,6 +158,6 @@ class __TwigTemplate_4daae4750fa1fbf0b99f37975f60fe67e596e7191c203832d02ff5ef399
 
     public function getDebugInfo()
     {
-        return array (  141 => 76,  114 => 51,  103 => 46,  99 => 45,  93 => 42,  89 => 41,  85 => 40,  81 => 39,  77 => 38,  71 => 37,  67 => 35,  63 => 34,  31 => 4,  28 => 3,);
+        return array (  140 => 75,  113 => 50,  102 => 45,  98 => 44,  93 => 42,  89 => 41,  85 => 40,  81 => 39,  77 => 38,  71 => 37,  67 => 35,  63 => 34,  31 => 4,  28 => 3,);
     }
 }

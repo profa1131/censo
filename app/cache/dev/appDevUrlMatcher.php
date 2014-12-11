@@ -807,92 +807,12 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         // censo_censo_default_index
-        if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'censo_censo_default_index')), array (  '_controller' => 'Censo\\CensoBundle\\Controller\\DefaultController::indexAction',));
-        }
-
-        if (0 === strpos($pathinfo, '/discapacidades')) {
-            // discapacidades
-            if (rtrim($pathinfo, '/') === '/discapacidades') {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_discapacidades;
-                }
-
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'discapacidades');
-                }
-
-                return array (  '_controller' => 'Censo\\CensoBundle\\Controller\\DiscapacidadesController::indexAction',  '_route' => 'discapacidades',);
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'censo_censo_default_index');
             }
-            not_discapacidades:
 
-            // discapacidades_create
-            if ($pathinfo === '/discapacidades/') {
-                if ($this->context->getMethod() != 'POST') {
-                    $allow[] = 'POST';
-                    goto not_discapacidades_create;
-                }
-
-                return array (  '_controller' => 'Censo\\CensoBundle\\Controller\\DiscapacidadesController::createAction',  '_route' => 'discapacidades_create',);
-            }
-            not_discapacidades_create:
-
-            // discapacidades_new
-            if ($pathinfo === '/discapacidades/new') {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_discapacidades_new;
-                }
-
-                return array (  '_controller' => 'Censo\\CensoBundle\\Controller\\DiscapacidadesController::newAction',  '_route' => 'discapacidades_new',);
-            }
-            not_discapacidades_new:
-
-            // discapacidades_show
-            if (preg_match('#^/discapacidades/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_discapacidades_show;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'discapacidades_show')), array (  '_controller' => 'Censo\\CensoBundle\\Controller\\DiscapacidadesController::showAction',));
-            }
-            not_discapacidades_show:
-
-            // discapacidades_edit
-            if (preg_match('#^/discapacidades/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_discapacidades_edit;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'discapacidades_edit')), array (  '_controller' => 'Censo\\CensoBundle\\Controller\\DiscapacidadesController::editAction',));
-            }
-            not_discapacidades_edit:
-
-            // discapacidades_update
-            if (preg_match('#^/discapacidades/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                if ($this->context->getMethod() != 'PUT') {
-                    $allow[] = 'PUT';
-                    goto not_discapacidades_update;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'discapacidades_update')), array (  '_controller' => 'Censo\\CensoBundle\\Controller\\DiscapacidadesController::updateAction',));
-            }
-            not_discapacidades_update:
-
-            // discapacidades_delete
-            if (preg_match('#^/discapacidades/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                if ($this->context->getMethod() != 'DELETE') {
-                    $allow[] = 'DELETE';
-                    goto not_discapacidades_delete;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'discapacidades_delete')), array (  '_controller' => 'Censo\\CensoBundle\\Controller\\DiscapacidadesController::deleteAction',));
-            }
-            not_discapacidades_delete:
-
+            return array (  '_controller' => 'Censo\\CensoBundle\\Controller\\DefaultController::indexAction',  '_route' => 'censo_censo_default_index',);
         }
 
         if (0 === strpos($pathinfo, '/e')) {
@@ -2260,18 +2180,16 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        if (0 === strpos($pathinfo, '/login')) {
-            // login
-            if ($pathinfo === '/login') {
-                return array (  '_controller' => 'Censo\\CensoBundle\\Controller\\SeguridadController::loginAction',  '_route' => 'login',);
+        // contrasenia
+        if ($pathinfo === '/contrasenia') {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_contrasenia;
             }
 
-            // login_check
-            if ($pathinfo === '/login_check') {
-                return array (  '_controller' => 'Censo\\CensoBundle\\Controller\\SeguridadController::loginAction',  '_route' => 'login_check',);
-            }
-
+            return array (  '_controller' => 'Censo\\CensoBundle\\Controller\\SeguridadController::contraseniaAction',  '_route' => 'contrasenia',);
         }
+        not_contrasenia:
 
         // olvido_contrasenia
         if ($pathinfo === '/olvido_contrasenia') {
@@ -2283,39 +2201,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Censo\\CensoBundle\\Controller\\SeguridadController::olvidoContraseniaAction',  '_route' => 'olvido_contrasenia',);
         }
         not_olvido_contrasenia:
-
-        // confirmacion
-        if (0 === strpos($pathinfo, '/confirmacion') && preg_match('#^/confirmacion/(?P<id>[^/]++)/(?P<cod>[^/]++)$#s', $pathinfo, $matches)) {
-            if (!in_array($this->context->getMethod(), array('POST', 'GET', 'HEAD'))) {
-                $allow = array_merge($allow, array('POST', 'GET', 'HEAD'));
-                goto not_confirmacion;
-            }
-
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'confirmacion')), array (  '_controller' => 'Censo\\CensoBundle\\Controller\\SeguridadController::confirmacionAction',));
-        }
-        not_confirmacion:
-
-        // restablecer_contrasenia
-        if (0 === strpos($pathinfo, '/restablecer_contrasenia') && preg_match('#^/restablecer_contrasenia/(?P<id>[^/]++)/(?P<email>[^/]++)$#s', $pathinfo, $matches)) {
-            if (!in_array($this->context->getMethod(), array('POST', 'GET', 'HEAD'))) {
-                $allow = array_merge($allow, array('POST', 'GET', 'HEAD'));
-                goto not_restablecer_contrasenia;
-            }
-
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'restablecer_contrasenia')), array (  '_controller' => 'Censo\\CensoBundle\\Controller\\SeguridadController::restablecerContraseniaAction',));
-        }
-        not_restablecer_contrasenia:
-
-        // cambio_contrasenia
-        if ($pathinfo === '/cambio_contrasenia') {
-            if ($this->context->getMethod() != 'POST') {
-                $allow[] = 'POST';
-                goto not_cambio_contrasenia;
-            }
-
-            return array (  '_controller' => 'Censo\\CensoBundle\\Controller\\SeguridadController::cambioContraseniaAction',  '_route' => 'cambio_contrasenia',);
-        }
-        not_cambio_contrasenia:
 
         if (0 === strpos($pathinfo, '/servicioscomunales')) {
             // servicioscomunales
@@ -2995,75 +2880,23 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // _welcome
-        if (rtrim($pathinfo, '/') === '') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', '_welcome');
-            }
-
-            return array (  '_controller' => 'Acme\\DemoBundle\\Controller\\WelcomeController::indexAction',  '_route' => '_welcome',);
-        }
-
-        if (0 === strpos($pathinfo, '/demo')) {
-            if (0 === strpos($pathinfo, '/demo/secured')) {
-                if (0 === strpos($pathinfo, '/demo/secured/log')) {
-                    if (0 === strpos($pathinfo, '/demo/secured/login')) {
-                        // _demo_login
-                        if ($pathinfo === '/demo/secured/login') {
-                            return array (  '_controller' => 'Acme\\DemoBundle\\Controller\\SecuredController::loginAction',  '_route' => '_demo_login',);
-                        }
-
-                        // _security_check
-                        if ($pathinfo === '/demo/secured/login_check') {
-                            return array (  '_controller' => 'Acme\\DemoBundle\\Controller\\SecuredController::securityCheckAction',  '_route' => '_security_check',);
-                        }
-
-                    }
-
-                    // _demo_logout
-                    if ($pathinfo === '/demo/secured/logout') {
-                        return array (  '_controller' => 'Acme\\DemoBundle\\Controller\\SecuredController::logoutAction',  '_route' => '_demo_logout',);
-                    }
-
+        if (0 === strpos($pathinfo, '/log')) {
+            if (0 === strpos($pathinfo, '/login')) {
+                // login
+                if ($pathinfo === '/login') {
+                    return array (  '_controller' => 'Censo\\CensoBundle\\Controller\\SeguridadController::loginAction',  '_route' => 'login',);
                 }
 
-                if (0 === strpos($pathinfo, '/demo/secured/hello')) {
-                    // acme_demo_secured_hello
-                    if ($pathinfo === '/demo/secured/hello') {
-                        return array (  'name' => 'World',  '_controller' => 'Acme\\DemoBundle\\Controller\\SecuredController::helloAction',  '_route' => 'acme_demo_secured_hello',);
-                    }
-
-                    // _demo_secured_hello
-                    if (preg_match('#^/demo/secured/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-                        return $this->mergeDefaults(array_replace($matches, array('_route' => '_demo_secured_hello')), array (  '_controller' => 'Acme\\DemoBundle\\Controller\\SecuredController::helloAction',));
-                    }
-
-                    // _demo_secured_hello_admin
-                    if (0 === strpos($pathinfo, '/demo/secured/hello/admin') && preg_match('#^/demo/secured/hello/admin/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-                        return $this->mergeDefaults(array_replace($matches, array('_route' => '_demo_secured_hello_admin')), array (  '_controller' => 'Acme\\DemoBundle\\Controller\\SecuredController::helloadminAction',));
-                    }
-
+                // login_check
+                if ($pathinfo === '/login_check') {
+                    return array('_route' => 'login_check');
                 }
 
             }
 
-            // _demo
-            if (rtrim($pathinfo, '/') === '/demo') {
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', '_demo');
-                }
-
-                return array (  '_controller' => 'Acme\\DemoBundle\\Controller\\DemoController::indexAction',  '_route' => '_demo',);
-            }
-
-            // _demo_hello
-            if (0 === strpos($pathinfo, '/demo/hello') && preg_match('#^/demo/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => '_demo_hello')), array (  '_controller' => 'Acme\\DemoBundle\\Controller\\DemoController::helloAction',));
-            }
-
-            // _demo_contact
-            if ($pathinfo === '/demo/contact') {
-                return array (  '_controller' => 'Acme\\DemoBundle\\Controller\\DemoController::contactAction',  '_route' => '_demo_contact',);
+            // logout
+            if ($pathinfo === '/logout') {
+                return array('_route' => 'logout');
             }
 
         }

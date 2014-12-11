@@ -712,8 +712,12 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
         }
 
         // censo_censo_default_index
-        if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'censo_censo_default_index')), array (  '_controller' => 'Censo\\CensoBundle\\Controller\\DefaultController::indexAction',));
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'censo_censo_default_index');
+            }
+
+            return array (  '_controller' => 'Censo\\CensoBundle\\Controller\\DefaultController::indexAction',  '_route' => 'censo_censo_default_index',);
         }
 
         if (0 === strpos($pathinfo, '/discapacidades')) {
@@ -1226,6 +1230,90 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                 not_formatenencias_delete:
 
             }
+
+        }
+
+        if (0 === strpos($pathinfo, '/groups')) {
+            // groups
+            if (rtrim($pathinfo, '/') === '/groups') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_groups;
+                }
+
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'groups');
+                }
+
+                return array (  '_controller' => 'Censo\\CensoBundle\\Controller\\GroupsController::indexAction',  '_route' => 'groups',);
+            }
+            not_groups:
+
+            // groups_create
+            if ($pathinfo === '/groups/') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_groups_create;
+                }
+
+                return array (  '_controller' => 'Censo\\CensoBundle\\Controller\\GroupsController::createAction',  '_route' => 'groups_create',);
+            }
+            not_groups_create:
+
+            // groups_new
+            if ($pathinfo === '/groups/new') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_groups_new;
+                }
+
+                return array (  '_controller' => 'Censo\\CensoBundle\\Controller\\GroupsController::newAction',  '_route' => 'groups_new',);
+            }
+            not_groups_new:
+
+            // groups_show
+            if (preg_match('#^/groups/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_groups_show;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'groups_show')), array (  '_controller' => 'Censo\\CensoBundle\\Controller\\GroupsController::showAction',));
+            }
+            not_groups_show:
+
+            // groups_edit
+            if (preg_match('#^/groups/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_groups_edit;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'groups_edit')), array (  '_controller' => 'Censo\\CensoBundle\\Controller\\GroupsController::editAction',));
+            }
+            not_groups_edit:
+
+            // groups_update
+            if (preg_match('#^/groups/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'PUT') {
+                    $allow[] = 'PUT';
+                    goto not_groups_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'groups_update')), array (  '_controller' => 'Censo\\CensoBundle\\Controller\\GroupsController::updateAction',));
+            }
+            not_groups_update:
+
+            // groups_delete
+            if (preg_match('#^/groups/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'DELETE') {
+                    $allow[] = 'DELETE';
+                    goto not_groups_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'groups_delete')), array (  '_controller' => 'Censo\\CensoBundle\\Controller\\GroupsController::deleteAction',));
+            }
+            not_groups_delete:
 
         }
 
@@ -2081,6 +2169,28 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
 
         }
 
+        // contrasenia
+        if ($pathinfo === '/contrasenia') {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_contrasenia;
+            }
+
+            return array (  '_controller' => 'Censo\\CensoBundle\\Controller\\SeguridadController::contraseniaAction',  '_route' => 'contrasenia',);
+        }
+        not_contrasenia:
+
+        // olvido_contrasenia
+        if ($pathinfo === '/olvido_contrasenia') {
+            if ($this->context->getMethod() != 'POST') {
+                $allow[] = 'POST';
+                goto not_olvido_contrasenia;
+            }
+
+            return array (  '_controller' => 'Censo\\CensoBundle\\Controller\\SeguridadController::olvidoContraseniaAction',  '_route' => 'olvido_contrasenia',);
+        }
+        not_olvido_contrasenia:
+
         if (0 === strpos($pathinfo, '/servicioscomunales')) {
             // servicioscomunales
             if (rtrim($pathinfo, '/') === '/servicioscomunales') {
@@ -2591,6 +2701,90 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
 
         }
 
+        if (0 === strpos($pathinfo, '/usuarios')) {
+            // usuarios
+            if (rtrim($pathinfo, '/') === '/usuarios') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_usuarios;
+                }
+
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'usuarios');
+                }
+
+                return array (  '_controller' => 'Censo\\CensoBundle\\Controller\\UsuariosController::indexAction',  '_route' => 'usuarios',);
+            }
+            not_usuarios:
+
+            // usuarios_create
+            if ($pathinfo === '/usuarios/') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_usuarios_create;
+                }
+
+                return array (  '_controller' => 'Censo\\CensoBundle\\Controller\\UsuariosController::createAction',  '_route' => 'usuarios_create',);
+            }
+            not_usuarios_create:
+
+            // usuarios_new
+            if ($pathinfo === '/usuarios/new') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_usuarios_new;
+                }
+
+                return array (  '_controller' => 'Censo\\CensoBundle\\Controller\\UsuariosController::newAction',  '_route' => 'usuarios_new',);
+            }
+            not_usuarios_new:
+
+            // usuarios_show
+            if (preg_match('#^/usuarios/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_usuarios_show;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'usuarios_show')), array (  '_controller' => 'Censo\\CensoBundle\\Controller\\UsuariosController::showAction',));
+            }
+            not_usuarios_show:
+
+            // usuarios_edit
+            if (preg_match('#^/usuarios/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_usuarios_edit;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'usuarios_edit')), array (  '_controller' => 'Censo\\CensoBundle\\Controller\\UsuariosController::editAction',));
+            }
+            not_usuarios_edit:
+
+            // usuarios_update
+            if (preg_match('#^/usuarios/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'PUT') {
+                    $allow[] = 'PUT';
+                    goto not_usuarios_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'usuarios_update')), array (  '_controller' => 'Censo\\CensoBundle\\Controller\\UsuariosController::updateAction',));
+            }
+            not_usuarios_update:
+
+            // usuarios_delete
+            if (preg_match('#^/usuarios/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'DELETE') {
+                    $allow[] = 'DELETE';
+                    goto not_usuarios_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'usuarios_delete')), array (  '_controller' => 'Censo\\CensoBundle\\Controller\\UsuariosController::deleteAction',));
+            }
+            not_usuarios_delete:
+
+        }
+
         if (0 === strpos($pathinfo, '/vocerias')) {
             // vocerias
             if (rtrim($pathinfo, '/') === '/vocerias') {
@@ -2677,165 +2871,24 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
 
         if (0 === strpos($pathinfo, '/log')) {
             if (0 === strpos($pathinfo, '/login')) {
-                // fos_user_security_login
+                // login
                 if ($pathinfo === '/login') {
-                    return array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::loginAction',  '_route' => 'fos_user_security_login',);
+                    return array (  '_controller' => 'Censo\\CensoBundle\\Controller\\SeguridadController::loginAction',  '_route' => 'login',);
                 }
 
-                // fos_user_security_check
+                // login_check
                 if ($pathinfo === '/login_check') {
-                    if ($this->context->getMethod() != 'POST') {
-                        $allow[] = 'POST';
-                        goto not_fos_user_security_check;
-                    }
-
-                    return array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::checkAction',  '_route' => 'fos_user_security_check',);
+                    return array('_route' => 'login_check');
                 }
-                not_fos_user_security_check:
 
             }
 
-            // fos_user_security_logout
+            // logout
             if ($pathinfo === '/logout') {
-                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::logoutAction',  '_route' => 'fos_user_security_logout',);
+                return array('_route' => 'logout');
             }
 
         }
-
-        if (0 === strpos($pathinfo, '/profile')) {
-            // fos_user_profile_show
-            if (rtrim($pathinfo, '/') === '/profile') {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_fos_user_profile_show;
-                }
-
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'fos_user_profile_show');
-                }
-
-                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ProfileController::showAction',  '_route' => 'fos_user_profile_show',);
-            }
-            not_fos_user_profile_show:
-
-            // fos_user_profile_edit
-            if ($pathinfo === '/profile/edit') {
-                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ProfileController::editAction',  '_route' => 'fos_user_profile_edit',);
-            }
-
-        }
-
-        if (0 === strpos($pathinfo, '/re')) {
-            if (0 === strpos($pathinfo, '/register')) {
-                // fos_user_registration_register
-                if (rtrim($pathinfo, '/') === '/register') {
-                    if (substr($pathinfo, -1) !== '/') {
-                        return $this->redirect($pathinfo.'/', 'fos_user_registration_register');
-                    }
-
-                    return array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::registerAction',  '_route' => 'fos_user_registration_register',);
-                }
-
-                if (0 === strpos($pathinfo, '/register/c')) {
-                    // fos_user_registration_check_email
-                    if ($pathinfo === '/register/check-email') {
-                        if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                            $allow = array_merge($allow, array('GET', 'HEAD'));
-                            goto not_fos_user_registration_check_email;
-                        }
-
-                        return array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::checkEmailAction',  '_route' => 'fos_user_registration_check_email',);
-                    }
-                    not_fos_user_registration_check_email:
-
-                    if (0 === strpos($pathinfo, '/register/confirm')) {
-                        // fos_user_registration_confirm
-                        if (preg_match('#^/register/confirm/(?P<token>[^/]++)$#s', $pathinfo, $matches)) {
-                            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                                $allow = array_merge($allow, array('GET', 'HEAD'));
-                                goto not_fos_user_registration_confirm;
-                            }
-
-                            return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_user_registration_confirm')), array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::confirmAction',));
-                        }
-                        not_fos_user_registration_confirm:
-
-                        // fos_user_registration_confirmed
-                        if ($pathinfo === '/register/confirmed') {
-                            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                                $allow = array_merge($allow, array('GET', 'HEAD'));
-                                goto not_fos_user_registration_confirmed;
-                            }
-
-                            return array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::confirmedAction',  '_route' => 'fos_user_registration_confirmed',);
-                        }
-                        not_fos_user_registration_confirmed:
-
-                    }
-
-                }
-
-            }
-
-            if (0 === strpos($pathinfo, '/resetting')) {
-                // fos_user_resetting_request
-                if ($pathinfo === '/resetting/request') {
-                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                        $allow = array_merge($allow, array('GET', 'HEAD'));
-                        goto not_fos_user_resetting_request;
-                    }
-
-                    return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ResettingController::requestAction',  '_route' => 'fos_user_resetting_request',);
-                }
-                not_fos_user_resetting_request:
-
-                // fos_user_resetting_send_email
-                if ($pathinfo === '/resetting/send-email') {
-                    if ($this->context->getMethod() != 'POST') {
-                        $allow[] = 'POST';
-                        goto not_fos_user_resetting_send_email;
-                    }
-
-                    return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ResettingController::sendEmailAction',  '_route' => 'fos_user_resetting_send_email',);
-                }
-                not_fos_user_resetting_send_email:
-
-                // fos_user_resetting_check_email
-                if ($pathinfo === '/resetting/check-email') {
-                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                        $allow = array_merge($allow, array('GET', 'HEAD'));
-                        goto not_fos_user_resetting_check_email;
-                    }
-
-                    return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ResettingController::checkEmailAction',  '_route' => 'fos_user_resetting_check_email',);
-                }
-                not_fos_user_resetting_check_email:
-
-                // fos_user_resetting_reset
-                if (0 === strpos($pathinfo, '/resetting/reset') && preg_match('#^/resetting/reset/(?P<token>[^/]++)$#s', $pathinfo, $matches)) {
-                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                        goto not_fos_user_resetting_reset;
-                    }
-
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_user_resetting_reset')), array (  '_controller' => 'FOS\\UserBundle\\Controller\\ResettingController::resetAction',));
-                }
-                not_fos_user_resetting_reset:
-
-            }
-
-        }
-
-        // fos_user_change_password
-        if ($pathinfo === '/profile/change-password') {
-            if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                goto not_fos_user_change_password;
-            }
-
-            return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ChangePasswordController::changePasswordAction',  '_route' => 'fos_user_change_password',);
-        }
-        not_fos_user_change_password:
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }

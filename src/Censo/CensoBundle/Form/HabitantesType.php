@@ -15,38 +15,7 @@ class HabitantesType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nombre', 'text', array(
-                    'label' => '* Primer Nombre',
-                    'required' => true,
-                    'attr' => array('class' => 'form-control',
-                        'placeholder' => 'Primer Nombre'),
-                ))
-            ->add('segundoNombre', 'text', array(
-                    'label' => '* Segundo Nombre',
-                    'required' => false,
-                    'attr' => array('class' => 'form-control',
-                        'placeholder' => 'Segundo nombre'),
-                ))
-            ->add('apellido', 'text', array(
-                    'label' => '* Primer Apellido',
-                    'required' => false,
-                    'attr' => array('class' => 'form-control',
-                        'placeholder' => 'Primer Apellido'),
-                ))
-            ->add('segundoApellido', 'text', array(
-                    'label' => '* Segundo Apellido',
-                    'required' => false,
-                    'attr' => array('class' => 'form-control',
-                        'placeholder' => 'Segundo Apellido'),
-                ))
-            ->add('genero', 'choice', array(
-                    'choices' => array(
-                        'masculino' => 'Masculino',
-                        'femenino' => 'Femanino'
-                    ),
-                    'required' => true,
-                    'expanded' => true
-                ))
+           
             ->add('nacionalidad', 'choice', array(
                     'choices' => array(
                         'venezolano' => 'Venezolano',
@@ -62,6 +31,56 @@ class HabitantesType extends AbstractType
                     'attr' => array('class' => 'form-control',
                         'placeholder' => 'Cedula'),
                 ))
+                ->add('fechaNacimiento','birthday',array(
+                    'label' => '* Fecha de nacimiento',
+                    'required' => true  
+                ))
+                
+                 ->add('nombre', 'text', array(
+                    'label' => '* Primer Nombre',
+                    'required' => true,
+                    'attr' => array('class' => 'form-control',
+                        'placeholder' => 'Primer Nombre',
+                        'onkeypress'=>'return soloLetras(event)'
+                      
+                ),))
+            ->add('segundoNombre', 'text', array(
+                    'label' => '* Segundo Nombre',
+                    'required' => false,
+                    'attr' => array('class' => 'form-control',
+                        'placeholder' => 'Segundo nombre',
+                        'onkeypress'=>'return soloLetras(event)'
+                )))
+            ->add('apellido', 'text', array(
+                    'label' => '* Primer Apellido',
+                    'required' => false,
+                    'attr' => array('class' => 'form-control',
+                        'placeholder' => 'Primer Apellido',
+                        'onkeypress'=>'return soloLetras(event)'
+                )))
+            ->add('segundoApellido', 'text', array(
+                    'label' => '* Segundo Apellido',
+                    'required' => false,
+                    'attr' => array('class' => 'form-control',
+                        'placeholder' => 'Segundo Apellido',
+                        'onkeypress'=>'return soloLetras(event)'
+                )))
+            ->add('genero', 'choice', array(
+                    'choices' => array(
+                        'masculino' => 'Masculino',
+                        'femenino' => 'Femanino'
+                    ),
+                    'required' => true,
+                    'expanded' => true
+                ))
+                ->add('embarazo', 'choice', array(
+                    'choices' => array(
+                        'si' => 'SI',
+                        'no' => 'NO'
+                    ),
+                    'expanded' => true
+                ))
+            
             ->add('empleo', 'choice', array(
                     'choices' => array(
                         'si' => 'SI',
@@ -70,20 +89,9 @@ class HabitantesType extends AbstractType
                     'required' => true,
                     'expanded' => true
                 ))
-            ->add('fechaNacimiento','birthday',array(
-                    'label' => '* Fecha de nacimiento',
-                    'required' => true,
-                    
-                ))
+            
                 
-            ->add('embarazo', 'choice', array(
-                    'choices' => array(
-                        'si' => 'SI',
-                        'no' => 'NO'
-                    ),
-                    'required' => true,
-                    'expanded' => true
-                ))
+            
             ->add('parentesco', 'choice', array(
                     'choices' => array(
                         'padre' => 'Padre',
@@ -220,18 +228,27 @@ class HabitantesType extends AbstractType
                 'label'=>'* Enfermedades',
                 'expanded'=> true,
                 'multiple'=> true,
+                 ))
+                
+                
+            ->add('discapacidades', 'choice', array(
+                    'label'=> 'Discapacitado',
+                    'choices' => array(
+                        'si' => 'SI',
+                        'no' => 'NO'
+                       
+                    ),
+                    'required' => true,
+                    'expanded' => true
                 ))
-            ->add('discapacidades',null, array(
-                'label'=>'Discapacidades',               
-                'empty_value'=> '-Seleccione-',
-                'attr'=> array('class'=> 'form-control',
-            )))
-                ->add('familias',null, array(
+                
+            ->add('familias',null, array(
                 'label'=>'Familias',               
                 'empty_value'=> '-Seleccione-',
                 'attr'=> array('class'=> 'form-control',
-            )));
-        
+            )))
+             ;  
+               
     }
    
     /**

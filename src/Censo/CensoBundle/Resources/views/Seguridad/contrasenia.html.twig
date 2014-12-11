@@ -1,4 +1,4 @@
-{% extends '::base.html.twig' %}
+{% extends '::base2.html.twig' %}
 {% block stylesheets %}
     {{parent()}}
     
@@ -8,14 +8,14 @@
 {% block _body %}   {% endblock %}
           
 {% block body %}      
-<div class="container">
+<div class="container col-md-10">
      <!--<div class="row">
         <div align="center">
-            <img src="{{ asset('bundles/recibo/imagenes/ubv.png')}}" ALT="Logo UBV">
+            <img src="{{ asset('#')}}" ALT="Logo">
             <hr>
         </div>
      </div>-->
-    <div class="col-md-8  col-md-offset-2">
+    <div class="col-md-10  col-md-offset-1">
         <!--
             <div class="col-md-12">
                 <div class="row">
@@ -39,12 +39,12 @@
     <form class="col-lg-12 form-signin" id="verificar" name="verificar" action="{{ path('olvido_contrasenia') }}" method="post">  
         
         <div class="form-group">
-                                <label class="control-label required">* Ingrese su Correo Electrónico de la UBV</label>
+                                <label class="control-label required">* Ingrese su Correo Electrónico </label>
                                 <div class='input-group'>
                                     <span class="input-group-addon">
                                         <span class="glyphicon glyphicon-envelope"></span>
                                     </span>
-                                    <input type="text" class="form-control" id="email" name="email" required="required" placeholder="prueba@ubv.edu.ve" onkeyup="cambiaMinuscula(this.value)"/>
+                                    <input type="text" class="form-control" id="email" name="email" required="required" placeholder="ejemplo@dominio.com" onkeyup="cambiaMinuscula(this.value)"/>
                                     <span class="input-group-addon">
                                         <span class="glyphicon glyphicon-asterisk"></span>
                                     </span>
@@ -103,10 +103,10 @@ $(document).ready(function() {
             email: {
                 validators: {
                     notEmpty: {
-                        message: 'La direccion de correo UBV es requerido'
+                        message: 'La direccion de correo es requerido'
                     },
                     emailAddress: {
-                        message: 'La direccion de correo UBV no es válida, ej: usuario@ubv.edu.ve'
+                        message: 'La direccion de correo no es válida, ej: ejemplo@'
                     }
                 }
             }                   

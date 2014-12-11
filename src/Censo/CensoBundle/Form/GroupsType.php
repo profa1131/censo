@@ -45,7 +45,7 @@ class GroupsType extends AbstractType
                         'label'=>'* Usuarios',
                         'label_attr' => array(
                             'class' => 'control-label'),
-                        'required'  => true,                         
+                        'required'  => false,                         
                         'attr' => array(
                             'class' => 'form-control')                                               
                         ))

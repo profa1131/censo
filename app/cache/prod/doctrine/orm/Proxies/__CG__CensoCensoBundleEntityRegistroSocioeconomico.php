@@ -64,10 +64,10 @@ class RegistroSocioeconomico extends \Censo\CensoBundle\Entity\RegistroSocioecon
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'id', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'ingresoFamiliar', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'actividadComercialViviendaId', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'habitacionesVivienda', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'ninosCalle', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'indigentes', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'enfermosTerminales', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'discapacitados', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'terceraEdad', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'ayudaSalud', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'ayudaVivienda', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'aguasBlancas', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'tanque', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'ltsTanque', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'tipoTanque', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'pipotes', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'cuantos', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'tipoPipotes', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'medidorAgua', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'gas', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'empresaGas', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'cantidadCilindros', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'capacidadCilindro', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'duracionCilindro', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'precioCilindro', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'sistemaElectrico', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'medidor', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'bombillosAhorradores', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'cuantosBobillosNecesita', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'mecanismoInformacionId', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'organizacionesCounitarias', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'fecha', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'registroSocioeconomico', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'recoleccionBasura', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'aguasServidas', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'condicionesSalubridad', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'formaTenencias', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'condicionTerreno', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'tipoViviendas', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'familias', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'telefonias', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'misiones', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'transporte', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'plagas', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'serviciosComunales', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'tipoTechos', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'mecanismosInformacion', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'animales', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'actividadComercial', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'enseres', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'tipoParedes', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'preguntas');
+            return array('__isInitialized__', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'id', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'familias', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'ingresoFamiliar', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'actividadComercial', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'habitacionesVivienda', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'ninosCalle', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'indigentes', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'enfermosTerminales', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'discapacitados', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'terceraEdad', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'ayudaSalud', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'ayudaVivienda', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'aguasBlancas', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'tanque', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'ltsTanque', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'tipoTanque', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'pipotes', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'cuantos', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'tipoPipotes', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'medidorAgua', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'gas', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'empresaGas', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'cantidadCilindros', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'capacidadCilindro', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'duracionCilindro', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'precioCilindro', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'medidor', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'bombillosAhorradores', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'cuantosBobillosNecesita', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'organizacionesCounitarias', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'fechaRegistro', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'recoleccionBasura', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'aguasServidas', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'condicionesSalubridad', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'formaTenencias', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'condicionTerreno', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'tipoViviendas', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'telefonias', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'misiones', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'transporte', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'plagas', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'serviciosComunales', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'tipoTechos', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'mecanismosInformacion', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'animales', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'enseres', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'tipoParedes', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'preguntas');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'id', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'ingresoFamiliar', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'actividadComercialViviendaId', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'habitacionesVivienda', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'ninosCalle', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'indigentes', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'enfermosTerminales', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'discapacitados', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'terceraEdad', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'ayudaSalud', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'ayudaVivienda', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'aguasBlancas', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'tanque', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'ltsTanque', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'tipoTanque', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'pipotes', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'cuantos', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'tipoPipotes', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'medidorAgua', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'gas', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'empresaGas', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'cantidadCilindros', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'capacidadCilindro', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'duracionCilindro', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'precioCilindro', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'sistemaElectrico', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'medidor', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'bombillosAhorradores', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'cuantosBobillosNecesita', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'mecanismoInformacionId', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'organizacionesCounitarias', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'fecha', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'registroSocioeconomico', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'recoleccionBasura', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'aguasServidas', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'condicionesSalubridad', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'formaTenencias', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'condicionTerreno', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'tipoViviendas', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'familias', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'telefonias', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'misiones', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'transporte', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'plagas', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'serviciosComunales', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'tipoTechos', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'mecanismosInformacion', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'animales', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'actividadComercial', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'enseres', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'tipoParedes', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'preguntas');
+        return array('__isInitialized__', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'id', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'familias', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'ingresoFamiliar', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'actividadComercial', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'habitacionesVivienda', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'ninosCalle', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'indigentes', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'enfermosTerminales', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'discapacitados', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'terceraEdad', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'ayudaSalud', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'ayudaVivienda', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'aguasBlancas', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'tanque', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'ltsTanque', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'tipoTanque', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'pipotes', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'cuantos', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'tipoPipotes', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'medidorAgua', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'gas', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'empresaGas', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'cantidadCilindros', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'capacidadCilindro', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'duracionCilindro', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'precioCilindro', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'medidor', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'bombillosAhorradores', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'cuantosBobillosNecesita', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'organizacionesCounitarias', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'fechaRegistro', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'recoleccionBasura', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'aguasServidas', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'condicionesSalubridad', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'formaTenencias', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'condicionTerreno', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'tipoViviendas', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'telefonias', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'misiones', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'transporte', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'plagas', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'serviciosComunales', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'tipoTechos', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'mecanismosInformacion', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'animales', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'enseres', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'tipoParedes', '' . "\0" . 'Censo\\CensoBundle\\Entity\\RegistroSocioeconomico' . "\0" . 'preguntas');
     }
 
     /**
@@ -208,28 +208,6 @@ class RegistroSocioeconomico extends \Censo\CensoBundle\Entity\RegistroSocioecon
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIngresoFamiliar', array());
 
         return parent::getIngresoFamiliar();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setActividadComercialViviendaId($actividadComercialViviendaId)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setActividadComercialViviendaId', array($actividadComercialViviendaId));
-
-        return parent::setActividadComercialViviendaId($actividadComercialViviendaId);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getActividadComercialViviendaId()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getActividadComercialViviendaId', array());
-
-        return parent::getActividadComercialViviendaId();
     }
 
     /**
@@ -719,28 +697,6 @@ class RegistroSocioeconomico extends \Censo\CensoBundle\Entity\RegistroSocioecon
     /**
      * {@inheritDoc}
      */
-    public function setSistemaElectrico($sistemaElectrico)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setSistemaElectrico', array($sistemaElectrico));
-
-        return parent::setSistemaElectrico($sistemaElectrico);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getSistemaElectrico()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getSistemaElectrico', array());
-
-        return parent::getSistemaElectrico();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function setMedidor($medidor)
     {
 
@@ -807,28 +763,6 @@ class RegistroSocioeconomico extends \Censo\CensoBundle\Entity\RegistroSocioecon
     /**
      * {@inheritDoc}
      */
-    public function setMecanismoInformacionId($mecanismoInformacionId)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setMecanismoInformacionId', array($mecanismoInformacionId));
-
-        return parent::setMecanismoInformacionId($mecanismoInformacionId);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getMecanismoInformacionId()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getMecanismoInformacionId', array());
-
-        return parent::getMecanismoInformacionId();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function setOrganizacionesCounitarias($organizacionesCounitarias)
     {
 
@@ -851,45 +785,78 @@ class RegistroSocioeconomico extends \Censo\CensoBundle\Entity\RegistroSocioecon
     /**
      * {@inheritDoc}
      */
-    public function setFecha($fecha)
+    public function setFechaRegistro($fechaRegistro)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setFecha', array($fecha));
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setFechaRegistro', array($fechaRegistro));
 
-        return parent::setFecha($fecha);
+        return parent::setFechaRegistro($fechaRegistro);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getFecha()
+    public function getFechaRegistro()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFecha', array());
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFechaRegistro', array());
 
-        return parent::getFecha();
+        return parent::getFechaRegistro();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setRegistroSocioeconomico($registroSocioeconomico)
+    public function setFamilias(\Censo\CensoBundle\Entity\Familias $familias = NULL)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setRegistroSocioeconomico', array($registroSocioeconomico));
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setFamilias', array($familias));
 
-        return parent::setRegistroSocioeconomico($registroSocioeconomico);
+        return parent::setFamilias($familias);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getRegistroSocioeconomico()
+    public function getFamilias()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getRegistroSocioeconomico', array());
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFamilias', array());
 
-        return parent::getRegistroSocioeconomico();
+        return parent::getFamilias();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addActividadComercial(\Censo\CensoBundle\Entity\ActividadComercialVivienda $actividadComercial)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addActividadComercial', array($actividadComercial));
+
+        return parent::addActividadComercial($actividadComercial);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeActividadComercial(\Censo\CensoBundle\Entity\ActividadComercialVivienda $actividadComercial)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeActividadComercial', array($actividadComercial));
+
+        return parent::removeActividadComercial($actividadComercial);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getActividadComercial()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getActividadComercial', array());
+
+        return parent::getActividadComercial();
     }
 
     /**
@@ -1022,28 +989,6 @@ class RegistroSocioeconomico extends \Censo\CensoBundle\Entity\RegistroSocioecon
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getTipoViviendas', array());
 
         return parent::getTipoViviendas();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setFamilias(\Censo\CensoBundle\Entity\Familias $familias = NULL)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setFamilias', array($familias));
-
-        return parent::setFamilias($familias);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getFamilias()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFamilias', array());
-
-        return parent::getFamilias();
     }
 
     /**
@@ -1308,39 +1253,6 @@ class RegistroSocioeconomico extends \Censo\CensoBundle\Entity\RegistroSocioecon
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAnimales', array());
 
         return parent::getAnimales();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function addActividadComercial(\Censo\CensoBundle\Entity\ActividadComercialVivienda $actividadComercial)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addActividadComercial', array($actividadComercial));
-
-        return parent::addActividadComercial($actividadComercial);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function removeActividadComercial(\Censo\CensoBundle\Entity\ActividadComercialVivienda $actividadComercial)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeActividadComercial', array($actividadComercial));
-
-        return parent::removeActividadComercial($actividadComercial);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getActividadComercial()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getActividadComercial', array());
-
-        return parent::getActividadComercial();
     }
 
     /**

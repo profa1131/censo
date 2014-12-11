@@ -28,7 +28,7 @@ class __TwigTemplate_aa53671bb142a99b72df207a7ba6fa5f6fd00b8c9a374f7b4d25a51d429
     public function block_body($context, array $blocks = array())
     {
         // line 4
-        echo "<h1>Vocerias edit</h1>
+        echo "<h1>Vocerias editar</h1>
 
     ";
         // line 6
@@ -41,7 +41,7 @@ class __TwigTemplate_aa53671bb142a99b72df207a7ba6fa5f6fd00b8c9a374f7b4d25a51d429
         // line 10
         echo $this->env->getExtension('routing')->getPath("vocerias");
         echo "\">
-            Back to the list
+            Volver a la Lista
         </a>
     </li>
     <li>";

@@ -7,7 +7,7 @@ class __TwigTemplate_633c268dc81a55dbfd7de3dd8cabc530012147eca844f6de7cdd1e48515
     {
         parent::__construct($env);
 
-        $this->parent = $this->env->loadTemplate("::base.html.twig");
+        $this->parent = $this->env->loadTemplate("::base2.html.twig");
 
         $this->blocks = array(
             'stylesheets' => array($this, 'block_stylesheets'),
@@ -20,7 +20,7 @@ class __TwigTemplate_633c268dc81a55dbfd7de3dd8cabc530012147eca844f6de7cdd1e48515
 
     protected function doGetParent(array $context)
     {
-        return "::base.html.twig";
+        return "::base2.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -56,17 +56,17 @@ class __TwigTemplate_633c268dc81a55dbfd7de3dd8cabc530012147eca844f6de7cdd1e48515
     public function block_body($context, array $blocks = array())
     {
         echo "      
-<div class=\"container\">
+<div class=\"container col-md-10\">
      <!--<div class=\"row\">
         <div align=\"center\">
             <img src=\"";
         // line 14
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/recibo/imagenes/ubv.png"), "html", null, true);
-        echo "\" ALT=\"Logo UBV\">
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("#"), "html", null, true);
+        echo "\" ALT=\"Logo\">
             <hr>
         </div>
      </div>-->
-    <div class=\"col-md-8  col-md-offset-2\">
+    <div class=\"col-md-10  col-md-offset-1\">
         <!--
             <div class=\"col-md-12\">
                 <div class=\"row\">
@@ -96,12 +96,12 @@ class __TwigTemplate_633c268dc81a55dbfd7de3dd8cabc530012147eca844f6de7cdd1e48515
         echo "\" method=\"post\">  
         
         <div class=\"form-group\">
-                                <label class=\"control-label required\">* Ingrese su Correo Electrónico de la UBV</label>
+                                <label class=\"control-label required\">* Ingrese su Correo Electrónico </label>
                                 <div class='input-group'>
                                     <span class=\"input-group-addon\">
                                         <span class=\"glyphicon glyphicon-envelope\"></span>
                                     </span>
-                                    <input type=\"text\" class=\"form-control\" id=\"email\" name=\"email\" required=\"required\" placeholder=\"prueba@ubv.edu.ve\" onkeyup=\"cambiaMinuscula(this.value)\"/>
+                                    <input type=\"text\" class=\"form-control\" id=\"email\" name=\"email\" required=\"required\" placeholder=\"ejemplo@dominio.com\" onkeyup=\"cambiaMinuscula(this.value)\"/>
                                     <span class=\"input-group-addon\">
                                         <span class=\"glyphicon glyphicon-asterisk\"></span>
                                     </span>
@@ -169,10 +169,10 @@ function cambiaMinuscula(valor){
             email: {
                 validators: {
                     notEmpty: {
-                        message: 'La direccion de correo UBV es requerido'
+                        message: 'La direccion de correo es requerido'
                     },
                     emailAddress: {
-                        message: 'La direccion de correo UBV no es válida, ej: usuario@ubv.edu.ve'
+                        message: 'La direccion de correo no es válida, ej: ejemplo@'
                     }
                 }
             }                   

@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Familias
  *
- * @ORM\Table(name="familias", indexes={@ORM\Index(name="IDX_FD33FAC88655CE6B", columns={"habitantes_id"}), @ORM\Index(name="IDX_FD33FAC838EC4CA0", columns={"concejos_comunales_id"})})
+ * @ORM\Table(name="familias", indexes={@ORM\Index(name="IDX_FD33FAC88655CE6B", columns={"habitantes_id"}), @ORM\Index(name="IDX_FD33FAC838EC4CA0", columns={"usuarios_id"})})
  * @ORM\Entity
  */
 class Familias
@@ -35,20 +35,29 @@ class Familias
      * @ORM\Column(name="telefono_local", type="string", length=255, nullable=false)
      */
     private $telefonoLocal;
-
+    
+    
     /**
      * @var string
      *
-     * @ORM\Column(name="direccion", type="string", length=255, nullable=false)
+     * @ORM\Column(name="telefono_movil", type="string", length=255, nullable=false)
      */
-    private $direccion;
+    private $telefonoMovil;
 
+  
     /**
      * @var string
      *
      * @ORM\Column(name="sector", type="string", length=255, nullable=false)
      */
     private $sector;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="numero_casa", type="string", length=255, nullable=false)
+     */
+    private $numeroCasa;
 
     /**
      * @var string
@@ -66,18 +75,26 @@ class Familias
      * })
      */
     private $habitantes;
-
-    /**
-     * @var \ConsejosComunales
+    
+     /**
+     * @var \RegistroSocioeconomico
      *
-     * @ORM\ManyToOne(targetEntity="ConsejosComunales")
+     * @ORM\ManyToOne(targetEntity="RegistroSocioeconomico")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="concejos_comunales_id", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="registroSocioeconomico_id", referencedColumnName="id")
      * })
      */
-    private $concejosComunales;
+    private $registroSocioeconomico;
 
-
+    /**
+     * @var \Usuarios
+     *
+     * @ORM\ManyToOne(targetEntity="Usuarios")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="usuarios_id", referencedColumnName="id")
+     * })
+     */
+    private $usuarios;
 
     /**
      * Get id
@@ -136,26 +153,26 @@ class Familias
     }
 
     /**
-     * Set direccion
+     * Set telefonoMovil
      *
-     * @param string $direccion
+     * @param string $telefonoMovil
      * @return Familias
      */
-    public function setDireccion($direccion)
+    public function setTelefonoMovil($telefonoMovil)
     {
-        $this->direccion = $direccion;
+        $this->telefonoMovil = $telefonoMovil;
 
         return $this;
     }
 
     /**
-     * Get direccion
+     * Get telefonoMovil
      *
      * @return string 
      */
-    public function getDireccion()
+    public function getTelefonoMovil()
     {
-        return $this->direccion;
+        return $this->telefonoMovil;
     }
 
     /**
@@ -228,28 +245,52 @@ class Familias
     }
 
     /**
-     * Set concejosComunales
+     * Set usuarios
      *
-     * @param \Censo\CensoBundle\Entity\ConsejosComunales $concejosComunales
+     * @param \Censo\CensoBundle\Entity\Usuarios $usuarios
      * @return Familias
      */
-    public function setConcejosComunales(\Censo\CensoBundle\Entity\ConsejosComunales $concejosComunales = null)
+    public function setUsuarios(\Censo\CensoBundle\Entity\Usuarios $usuarios = null)
     {
-        $this->concejosComunales = $concejosComunales;
+        $this->usuarios = $usuarios;
 
         return $this;
     }
 
     /**
-     * Get concejosComunales
+     * Get usuarios
      *
-     * @return \Censo\CensoBundle\Entity\ConsejosComunales 
+     * @return \Censo\CensoBundle\Entity\Usuarios 
      */
-    public function getConcejosComunales()
+    public function getUsuarios()
     {
-        return $this->concejosComunales;
+        return $this->usuarios;
     }
+    
     public function __toString() {
-        return $this->getApellidos();
+        return $this->apellidos;
+    }
+
+    /**
+     * Set numeroCasa
+     *
+     * @param string $numeroCasa
+     * @return Familias
+     */
+    public function setNumeroCasa($numeroCasa)
+    {
+        $this->numeroCasa = $numeroCasa;
+
+        return $this;
+    }
+
+    /**
+     * Get numeroCasa
+     *
+     * @return string 
+     */
+    public function getNumeroCasa()
+    {
+        return $this->numeroCasa;
     }
 }

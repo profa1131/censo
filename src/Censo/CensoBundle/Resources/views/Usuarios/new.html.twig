@@ -1,15 +1,97 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Usuarios creation</h1>
+    <h1 class="page-header, fi-torsos-all-female">Agregar Usuarios</h1>
+    <ul class="record_actions"></ul>
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Agregar Usuarios
+            </div>
+            <div class="panel-body">
+   
 
-    {{ form(form) }}
+   
+    {{ form_start(form) }}
+        {{ form_errors(form) }} 
+        <div class="form-group col-md-6 ">       
+        {{ form_label(form.username) }}
+        {{ form_errors(form.username) }}
+        {{ form_widget(form.username) }}
+        
+        </div>
+        <div class="form-group col-md-6 ">       
+        {{ form_label(form.password) }}
+        {{ form_errors(form.password) }}
+        {{ form_widget(form.password) }}
+        
+        </div>
+        <div class="form-group col-md-6">       
+        {{ form_label(form.email) }}
+        {{ form_errors(form.email) }}
+        {{ form_widget(form.email) }}
+        
+        </div>
+        <div class="form-group col-md-6 ">       
+        {{ form_label(form.nombre) }}
+        {{ form_errors(form.nombre) }}
+        {{ form_widget(form.nombre) }}
+        
+        </div>
+        <div class="form-group col-md-6 ">       
+        {{ form_label(form.codigo) }}
+        {{ form_errors(form.codigo) }}
+        {{ form_widget(form.codigo) }}
+        
+        </div>
+        <div class="form-group col-md-6 ">       
+        {{ form_label(form.telefono) }}
+        {{ form_errors(form.telefono) }}
+        {{ form_widget(form.telefono) }}
+        
+        </div>
+        <div class="form-group col-md-6 ">       
+        {{ form_label(form.telefonoMovil) }}
+        {{ form_errors(form.telefonoMovil) }}
+        {{ form_widget(form.telefonoMovil) }}
+        
+        </div>
+        <div class="form-group col-md-6 ">       
+        {{ form_label(form.parroquia) }}
+        {{ form_errors(form.parroquia) }}
+        {{ form_widget(form.parroquia) }}
+        
+        </div>
+        <div class="form-group col-md-6 ">       
+        {{ form_label(form.group) }}
+        {{ form_errors(form.group) }}
+        {{ form_widget(form.group) }}
+        
+        </div>
+        {{ form_end(form) }}
+        
 
         <ul class="record_actions">
     <li>
-        <a href="{{ path('usuarios') }}">
-            Back to the list
-        </a>
+         <a class="col-md-12 btn btn-primary" href="{{ path('usuarios') }}">Volver a la Lista </a>
+        </div>
+        </div>
     </li>
 </ul>
 {% endblock %}
+
+    {% block javascripts %}      
+        <script type="text/javascript">
+            $(document).on('ready', function () {                
+               
+        $('#censo_censobundle_usuarios_telefonoCelular').mask("(0999) 999-9999");
+        $('#censo_censobundle_usuarios_cedula').mask("999999999");
+        $('#censo_censobundle_usuarios_telefonoOficina').mask("(0999) 999-9999");
+        $('#censo_censobundle_usuarios_ingresoMensual').mask("000.000.000.000.000 bs");
+                  censo_censobundle_usuarios_email
+                
+            });
+            
+            
+        </script>    
+    {% endblock %}

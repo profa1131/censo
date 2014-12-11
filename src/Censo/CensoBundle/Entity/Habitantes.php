@@ -219,7 +219,14 @@ class Habitantes
      * })
      */
     private $vocerias;
-
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="discapacidades", type="string", length=255, nullable=false)
+     */
+    private $discapacidades;
+    
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
@@ -228,15 +235,7 @@ class Habitantes
     private $enfermedades;
 
     
-    /**
-     * @var \Discapacidades
-     *
-     * @ORM\ManyToOne(targetEntity="Discapacidades")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="Discapacidades_id", referencedColumnName="id")
-     * })
-     */
-    private $discapacidades;
+    
     
     /**
      * @var \Familias
@@ -248,20 +247,14 @@ class Habitantes
      */
     private $familias;
      
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="edad", type="string", length=255, nullable=true)
-     */
-    private $edad;
-
+    
     /**
      * Constructor
      */
     public function __construct()
     {
         $this->enfermedades = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->discapacidades = new \Doctrine\Common\Collections\ArrayCollection();
+        
     }
 
 
@@ -929,39 +922,7 @@ class Habitantes
         return $this->enfermedades;
     }
 
-    /**
-     * Add discapacidades
-     *
-     * @param \Censo\CensoBundle\Entity\Discapacidades $discapacidades
-     * @return Habitantes
-     */
-    public function addDiscapacidade(\Censo\CensoBundle\Entity\Discapacidades $discapacidades)
-    {
-        $this->discapacidades[] = $discapacidades;
-
-        return $this;
-    }
-
-    /**
-     * Remove discapacidades
-     *
-     * @param \Censo\CensoBundle\Entity\Discapacidades $discapacidades
-     */
-    public function removeDiscapacidade(\Censo\CensoBundle\Entity\Discapacidades $discapacidades)
-    {
-        $this->discapacidades->removeElement($discapacidades);
-    }
-
-    /**
-     * Get discapacidades
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getDiscapacidades()
-    {
-        return $this->discapacidades;
-    }
-    
+   
 
     /**
      * Set familias
@@ -987,13 +948,15 @@ class Habitantes
     }
     
 
+    
+
     /**
      * Set discapacidades
      *
-     * @param \Censo\CensoBundle\Entity\Discapacidades $discapacidades
+     * @param string $discapacidades
      * @return Habitantes
      */
-    public function setDiscapacidades(\Censo\CensoBundle\Entity\Discapacidades $discapacidades = null)
+    public function setDiscapacidades($discapacidades)
     {
         $this->discapacidades = $discapacidades;
 
@@ -1001,25 +964,12 @@ class Habitantes
     }
 
     /**
-     * Set edad
-     *
-     * @param string $edad
-     * @return Habitantes
-     */
-    public function setEdad($edad)
-    {
-        $this->edad = $edad;
-
-        return $this;
-    }
-
-    /**
-     * Get edad
+     * Get discapacidades
      *
      * @return string 
      */
-    public function getEdad()
+    public function getDiscapacidades()
     {
-        return $this->edad;
+        return $this->discapacidades;
     }
 }

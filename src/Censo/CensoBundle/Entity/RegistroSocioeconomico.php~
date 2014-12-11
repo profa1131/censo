@@ -17,10 +17,20 @@ class RegistroSocioeconomico
      *
      * @ORM\Column(name="id", type="bigint", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="SEQUENCE")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      * @ORM\SequenceGenerator(sequenceName="registro_socioeconomico_id_seq", allocationSize=1, initialValue=1)
      */
     private $id;
+    
+    /**
+     * @var \Familias
+     *
+     * @ORM\ManyToOne(targetEntity="Familias")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="familias_id", referencedColumnName="id")
+     * })
+     */
+    private $familias;
 
     /**
      * @var string
@@ -30,11 +40,12 @@ class RegistroSocioeconomico
     private $ingresoFamiliar;
 
     /**
-     * @var integer
+     * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\Column(name="actividad_comercial_vivienda_id", type="bigint", nullable=false)
+     * @ORM\ManyToMany(targetEntity="ActividadComercialVivienda", mappedBy="rgistroSocioeconomico")
      */
-    private $actividadComercialViviendaId;
+    private $actividadComercial;
+
 
     /**
      * @var string
@@ -190,13 +201,7 @@ class RegistroSocioeconomico
      */
     private $precioCilindro;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="sistema_electrico", type="string", length=255, nullable=false)
-     */
-    private $sistemaElectrico;
-
+   
     /**
      * @var string
      *
@@ -219,13 +224,6 @@ class RegistroSocioeconomico
     private $cuantosBobillosNecesita;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="mecanismo_informacion_id", type="bigint", nullable=false)
-     */
-    private $mecanismoInformacionId;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="organizaciones_counitarias", type="string", length=255, nullable=false)
@@ -235,16 +233,10 @@ class RegistroSocioeconomico
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fecha", type="date", nullable=true)
+     * @ORM\Column(name="fechaRegistro", type="date", nullable=true)
      */
-    private $fecha;
+    private $fechaRegistro;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="registro_socioeconomico", type="string", length=10, nullable=false)
-     */
-    private $registroSocioeconomico;
 
     /**
      * @var \RecoleccionBasura
@@ -306,15 +298,7 @@ class RegistroSocioeconomico
      */
     private $tipoViviendas;
 
-    /**
-     * @var \Familias
-     *
-     * @ORM\ManyToOne(targetEntity="Familias")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="familias_id", referencedColumnName="id")
-     * })
-     */
-    private $familias;
+    
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -404,13 +388,7 @@ class RegistroSocioeconomico
      */
     private $animales;
 
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="ActividadComercialVivienda", mappedBy="rgistroSocioeconomico")
-     */
-    private $actividadComercial;
-
+    
     /**
      * @var \Doctrine\Common\Collections\Collection
      *

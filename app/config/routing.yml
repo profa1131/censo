@@ -3,4 +3,12 @@ censo:
     type:     annotation
     prefix:   /
     
+login:
+  pattern: /login
+  defaults: {_controller: CensoBundle:Seguridad:login}
 
+login_check:
+  pattern: /login_check
+
+logout:
+  pattern: /logout

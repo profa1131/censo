@@ -11,7 +11,7 @@ security:
 
     role_hierarchy:        
         ROLE_USER: ROLE_CCOMUNAL
-        ROLE_ADMIN: ROLE_USER
+        ROLE_ADMIN: ROLE_COMUNA
         ROLE_SUPER_ADMIN: [ ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH ]
         
     firewalls:
@@ -35,4 +35,9 @@ security:
             anonymous: ~
 
     access_control:
+      - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY}
+      - { path: ^/usuarios, roles:  ROLE_SUPER_ADMIN}
+      - { path: ^/habitantes, roles:  ROLE_SUPER_ADMIN}
+      - { path: ^/plagas, roles:  ROLE_SUPER_ADMIN}
+#      - { path: ^/principal/*, roles:  ROLE_SUPER_ADMIN}
       

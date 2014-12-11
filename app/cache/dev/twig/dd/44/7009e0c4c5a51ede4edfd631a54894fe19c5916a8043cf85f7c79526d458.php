@@ -62,13 +62,13 @@ class __TwigTemplate_dd447009e0c4c5a51ede4edfd631a54894fe19c5916a8043cf85f7c7952
                         <a href=\"";
             // line 22
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("areasdetrabajos_show", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id", array()))), "html", null, true);
-            echo "\">show</a>
+            echo "\">Mostrar</a>
                     </li>
                     <li>
                         <a href=\"";
             // line 25
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("areasdetrabajos_edit", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id", array()))), "html", null, true);
-            echo "\">edit</a>
+            echo "\">Editar</a>
                     </li>
                 </ul>
                 </td>
@@ -88,7 +88,7 @@ class __TwigTemplate_dd447009e0c4c5a51ede4edfd631a54894fe19c5916a8043cf85f7c7952
         // line 36
         echo $this->env->getExtension('routing')->getPath("areasdetrabajos_new");
         echo "\">
-                Create a new entry
+                Ingresar
             </a>
         </li>
     </ul>

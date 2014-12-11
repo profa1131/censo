@@ -111,19 +111,19 @@ class __TwigTemplate_9bd58b7434db38890c82e8cda09675640ef7b76e4a7a1ede235181ba195
                 <!-- use the filter_reset : '.reset' option or include data-filter=\"\" using the filter button demo code to reset the filters -->
                 <br>
 
-                <table class=\"tablesorter\">
+                <table class=\"tablesorter col-lg-10\">
                     <thead>
                         <tr>
                             
                             <th>Nombre Completo</th>
+                             <th>Cedula</th>
                             <th class=\"filter-select filter-exact\" data-placeholder=\"-seleccione-\">Genero</th>
-                           
-                            <th>Edades</th>
                             <th class=\"filter-select filter-exact\" data-placeholder=\"-seleccione-\">Embarazo</th>
-                            <th>Cedula</th>
+                           
                             <th class=\"filter-select filter-exact\" data-placeholder=\"-seleccione-\">Jefe de familia</th>
                             <th>Tlf Celular</th>
-                            <th class=\"filter-select filter-exact\" data-placeholder=\"-seleccione-\">Discapacidades</th>
+                            <th class=\"filter-select filter-exact\" data-placeholder=\"-seleccione-\">Empleo</th>
+                            <th class=\"filter-select filter-exact\" data-placeholder=\"-seleccione-\">Discapacitado</th>
                             <th class=\"filter-select filter-exact\" data-placeholder=\"-seleccione-\">Voceros</th>
                             <th class=\"print\">Acciones</th>
                         </tr>
@@ -146,22 +146,19 @@ class __TwigTemplate_9bd58b7434db38890c82e8cda09675640ef7b76e4a7a1ede235181ba195
             echo " ";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "apellido", array()), "html", null, true);
             echo "</td>            
-            <td>";
+             <td>";
             // line 75
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "genero", array()), "html", null, true);
-            echo "</td>            
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "cedula", array()), "html", null, true);
+            echo "</td>
             <td>";
             // line 76
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "edad", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "genero", array()), "html", null, true);
             echo "</td>
             <td>";
             // line 77
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "embarazo", array()), "html", null, true);
             echo "</td>
-            <td>";
-            // line 78
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "cedula", array()), "html", null, true);
-            echo "</td>
+            
             <td>";
             // line 79
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "jefeGrupoFamiliar", array()), "html", null, true);
@@ -172,20 +169,24 @@ class __TwigTemplate_9bd58b7434db38890c82e8cda09675640ef7b76e4a7a1ede235181ba195
             echo "</td>
             <td>";
             // line 81
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "discapacidades", array()), "nombre", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "empleo", array()), "html", null, true);
             echo "</td>
             <td>";
             // line 82
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "discapacidades", array()), "html", null, true);
+            echo "</td>
+            <td>";
+            // line 83
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "participaOrganizacion", array()), "html", null, true);
             echo "</td>
             
             <td class=\"print\">
         <a href=\"";
-            // line 85
+            // line 86
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("habitantes_show", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id", array()))), "html", null, true);
             echo "\"><i class=\"glyphicon glyphicon-zoom-in col-md-4 col-md-4\"></i> </a>
         <a href=\"";
-            // line 86
+            // line 87
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("habitantes_edit", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id", array()))), "html", null, true);
             echo "\"><i class=\"glyphicon glyphicon-pencil col-md-4 col-md-offset-4\"></i></a>
      </td>
@@ -195,7 +196,7 @@ class __TwigTemplate_9bd58b7434db38890c82e8cda09675640ef7b76e4a7a1ede235181ba195
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 90
+        // line 91
         echo "</tbody>
 <tfoot>
 
@@ -220,7 +221,7 @@ class __TwigTemplate_9bd58b7434db38890c82e8cda09675640ef7b76e4a7a1ede235181ba195
 
 
     <a class=\"col-md-12 btn btn-success print\" href=\"";
-        // line 113
+        // line 114
         echo $this->env->getExtension('routing')->getPath("habitantes_new");
         echo "\">Agregar nuevo Habitantes </a>
    
@@ -245,39 +246,39 @@ class __TwigTemplate_9bd58b7434db38890c82e8cda09675640ef7b76e4a7a1ede235181ba195
 ";
     }
 
-    // line 134
+    // line 135
     public function block_footerscript($context, array $blocks = array())
     {
-        // line 135
+        // line 136
         echo "<!-- jQuery -->
     <!--<script src=\"";
-        // line 136
+        // line 137
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/censo/js/js/jquery-1.4.4.min.js"), "html", null, true);
         echo "\"></script>-->
 
     <!-- Demo stuff -->
     <script src=\"";
-        // line 139
+        // line 140
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/censo/js/js/prettify.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 140
+        // line 141
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/censo/js/js/docs.js"), "html", null, true);
         echo "\"></script>
 
     <!-- Tablesorter: required for bootstrap -->
     <script src=\"";
-        // line 143
+        // line 144
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/censo/js/js/jquery.tablesorter.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 144
+        // line 145
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/censo/js/js/jquery.tablesorter.widgets.js"), "html", null, true);
         echo "\"></script>
         
     <!-- Tablesorter: optional -->
     <script src=\"";
-        // line 147
+        // line 148
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/censo/js/js/jquery.tablesorter.pager.js"), "html", null, true);
         echo "\"></script>
     
@@ -391,6 +392,6 @@ class __TwigTemplate_9bd58b7434db38890c82e8cda09675640ef7b76e4a7a1ede235181ba195
 
     public function getDebugInfo()
     {
-        return array (  281 => 147,  275 => 144,  271 => 143,  265 => 140,  261 => 139,  255 => 136,  252 => 135,  249 => 134,  224 => 113,  199 => 90,  189 => 86,  185 => 85,  179 => 82,  175 => 81,  171 => 80,  167 => 79,  163 => 78,  159 => 77,  155 => 76,  151 => 75,  145 => 74,  141 => 72,  137 => 71,  91 => 29,  83 => 25,  79 => 24,  72 => 20,  68 => 19,  64 => 18,  60 => 17,  53 => 13,  49 => 12,  44 => 10,  39 => 8,  33 => 4,  30 => 3,);
+        return array (  282 => 148,  276 => 145,  272 => 144,  266 => 141,  262 => 140,  256 => 137,  253 => 136,  250 => 135,  225 => 114,  200 => 91,  190 => 87,  186 => 86,  180 => 83,  176 => 82,  172 => 81,  168 => 80,  164 => 79,  159 => 77,  155 => 76,  151 => 75,  145 => 74,  141 => 72,  137 => 71,  91 => 29,  83 => 25,  79 => 24,  72 => 20,  68 => 19,  64 => 18,  60 => 17,  53 => 13,  49 => 12,  44 => 10,  39 => 8,  33 => 4,  30 => 3,);
     }
 }

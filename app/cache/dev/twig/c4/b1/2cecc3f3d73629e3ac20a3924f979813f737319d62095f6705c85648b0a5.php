@@ -55,7 +55,7 @@ class __TwigTemplate_c4b12cecc3f3d73629e3ac20a3924f979813f737319d62095f6705c8564
         // line 21
         echo $this->env->getExtension('routing')->getPath("transportes");
         echo "\">
-            Back to the list
+            Volver a la Lista
         </a>
     </li>
     <li>

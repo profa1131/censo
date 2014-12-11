@@ -64,10 +64,10 @@ class Familias extends \Censo\CensoBundle\Entity\Familias implements \Doctrine\O
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'id', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'apellidos', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'telefonoLocal', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'direccion', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'sector', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'nombresComunidad', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'habitantes', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'concejosComunales');
+            return array('__isInitialized__', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'id', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'apellidos', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'telefonoLocal', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'telefonoMovil', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'sector', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'nombresComunidad', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'habitantes', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'usuarios');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'id', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'apellidos', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'telefonoLocal', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'direccion', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'sector', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'nombresComunidad', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'habitantes', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'concejosComunales');
+        return array('__isInitialized__', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'id', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'apellidos', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'telefonoLocal', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'telefonoMovil', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'sector', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'nombresComunidad', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'habitantes', '' . "\0" . 'Censo\\CensoBundle\\Entity\\Familias' . "\0" . 'usuarios');
     }
 
     /**
@@ -235,23 +235,23 @@ class Familias extends \Censo\CensoBundle\Entity\Familias implements \Doctrine\O
     /**
      * {@inheritDoc}
      */
-    public function setDireccion($direccion)
+    public function setTelefonoMovil($telefonoMovil)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDireccion', array($direccion));
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setTelefonoMovil', array($telefonoMovil));
 
-        return parent::setDireccion($direccion);
+        return parent::setTelefonoMovil($telefonoMovil);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getDireccion()
+    public function getTelefonoMovil()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDireccion', array());
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getTelefonoMovil', array());
 
-        return parent::getDireccion();
+        return parent::getTelefonoMovil();
     }
 
     /**
@@ -323,23 +323,23 @@ class Familias extends \Censo\CensoBundle\Entity\Familias implements \Doctrine\O
     /**
      * {@inheritDoc}
      */
-    public function setConcejosComunales(\Censo\CensoBundle\Entity\ConsejosComunales $concejosComunales = NULL)
+    public function setUsuarios(\Censo\CensoBundle\Entity\Usuarios $usuarios = NULL)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setConcejosComunales', array($concejosComunales));
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUsuarios', array($usuarios));
 
-        return parent::setConcejosComunales($concejosComunales);
+        return parent::setUsuarios($usuarios);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getConcejosComunales()
+    public function getUsuarios()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getConcejosComunales', array());
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUsuarios', array());
 
-        return parent::getConcejosComunales();
+        return parent::getUsuarios();
     }
 
     /**

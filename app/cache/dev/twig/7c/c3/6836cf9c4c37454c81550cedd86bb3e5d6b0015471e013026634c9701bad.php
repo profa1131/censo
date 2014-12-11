@@ -55,7 +55,7 @@ class __TwigTemplate_7cc36836cf9c4c37454c81550cedd86bb3e5d6b0015471e013026634c97
         // line 21
         echo $this->env->getExtension('routing')->getPath("telefonias");
         echo "\">
-            Back to the list
+            Volver a la Lista
         </a>
     </li>
     <li>

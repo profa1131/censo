@@ -13,6 +13,7 @@ class __TwigTemplate_913f1a1dff0cce0a745aea95d560c6bb9116c21a62ee36ca3d9693b6a29
             'title' => array($this, 'block_title'),
             'headscript' => array($this, 'block_headscript'),
             'body' => array($this, 'block_body'),
+            'javascripts' => array($this, 'block_javascripts'),
             'footerscript' => array($this, 'block_footerscript'),
         );
     }
@@ -63,7 +64,11 @@ class __TwigTemplate_913f1a1dff0cce0a745aea95d560c6bb9116c21a62ee36ca3d9693b6a29
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/censo/css/foundation-icons/foundation-icons/foundation-icons.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" type=\"text/css\">
 
-    
+    <!-- Estilos Propios -->
+    <link href=\"";
+        // line 27
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/censo/css/estilos.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\" type=\"text/css\">
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -72,7 +77,7 @@ class __TwigTemplate_913f1a1dff0cce0a745aea95d560c6bb9116c21a62ee36ca3d9693b6a29
         <script src=\"https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js\"></script>
     <![endif]-->
     ";
-        // line 34
+        // line 35
         $this->displayBlock('headscript', $context, $blocks);
         echo " 
   </head>
@@ -156,11 +161,15 @@ class __TwigTemplate_913f1a1dff0cce0a745aea95d560c6bb9116c21a62ee36ca3d9693b6a29
                         <li><a href=\"#\"><i class=\"fa fa-gear fa-fw\"></i> Settings</a>
                         </li>
                         <li class=\"divider\"></li>
-                        <li><a href=\"login.html\"><i class=\"fa fa-sign-out fa-fw\"></i> Logout</a>
+                        <li><a href=\"";
+        // line 117
+        echo $this->env->getExtension('routing')->getPath("logout");
+        echo "\"><i class=\"fa fa-sign-out fa-fw\"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
                 </li>
+               
                 <!-- /.dropdown -->
             </ul>
             <!-- /.navbar-top-links -->
@@ -169,36 +178,21 @@ class __TwigTemplate_913f1a1dff0cce0a745aea95d560c6bb9116c21a62ee36ca3d9693b6a29
             <div class=\"navbar-default sidebar\" role=\"navigation\">
                 <div class=\"sidebar-nav navbar-collapse\">
                     <ul class=\"nav\" id=\"side-menu\">
-                        <li class=\"sidebar-search\">
-                            <div class=\"input-group custom-search-form\">
-                                <input type=\"text\" class=\"form-control\" placeholder=\"Buscar\">
-                                <span class=\"input-group-btn\">
-                                <button class=\"btn btn-default\" type=\"button\">
-                                    <i class=\"fa fa-search\"></i>
-                                </button>
-                            </span>
-                            </div>
-                            <!-- /input-group -->
-                        </li>
+                        
                         <li>
                             <a href=\"/consejocomunal/index.php\"><i class=\"fi-universal-access\"></i> Inicio</a>
                         </li>
                         <li>
-                            <li>
-                                    <a href=\"/censo/web/app_dev.php/comunas\">COMUNAS</a>
-                                </li>
-                                <li>
-                                    <a href=\"/censo/web/app_dev.php/consejoscomunales\">Consejos Comunales</a>
-                                </li>
+                            
                             <a href=\"#\"><i class=\"fi-torsos-all-female\"></i> Familias<span class=\"fa arrow\"></span></a>
                             <ul class=\"nav nav-second-level\">
                                 <li>
                                     <a href=\"/censo/web/app_dev.php/familias\">Listado de Familias</a>
                                 </li>
-                                
                                 <li>
-                                    <a href=\"/censo/web/app.php/familias/new\">Agregar nueva Familia</a>
+                                    <a href=\"/censo/web/app_dev.php/familias/new\">Registrar Familia</a>
                                 </li>
+                                                                
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
@@ -275,9 +269,7 @@ class __TwigTemplate_913f1a1dff0cce0a745aea95d560c6bb9116c21a62ee36ca3d9693b6a29
                                 <li>
                                     <a href=\"/censo/web/app_dev.php/tipoviviendas\">TipoViviendas</a>
                                 </li>
-                                <li>
-                                    <a href=\"/censo/web/app_dev.php/discapacidades\">Discapacidades</a>
-                                </li>
+                                
                                 <li>
                                     <a href=\"/censo/web/app_dev.php/profesiones\">Profesiones</a>
                                 </li>
@@ -376,7 +368,7 @@ class __TwigTemplate_913f1a1dff0cce0a745aea95d560c6bb9116c21a62ee36ca3d9693b6a29
                 <div class=\"col-lg-12\">
                   
                  ";
-        // line 335
+        // line 320
         $this->displayBlock('body', $context, $blocks);
         echo " 
                 </div>
@@ -391,31 +383,54 @@ class __TwigTemplate_913f1a1dff0cce0a745aea95d560c6bb9116c21a62ee36ca3d9693b6a29
     <!-- /#wrapper -->
     <!-- jQuery Version 1.11.0 -->
     <script src=\"";
-        // line 347
+        // line 332
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/censo/js/jquery-1.11.0.js"), "html", null, true);
         echo "\"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src=\"";
-        // line 350
+        // line 335
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/censo/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src=\"";
-        // line 353
+        // line 338
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/censo/js/plugins/metisMenu/metisMenu.min.js"), "html", null, true);
         echo "\"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src=\"";
-        // line 356
+        // line 341
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/censo/js/sb-admin-2.js"), "html", null, true);
         echo "\"></script>
-    ";
-        // line 357
+    <!-- Mask JavaScript -->
+    <script src=\"";
+        // line 343
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/censo/js/jquery.mask.min.js"), "html", null, true);
+        echo "\"></script>
+    <!-- Bootstrap validator js -->
+     
+   <script src=\"";
+        // line 346
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/censo/js/bootstrapValidator.js"), "html", null, true);
+        echo "\"></script>
+   <script src=\"";
+        // line 347
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/censo/js/funciones.js"), "html", null, true);
+        echo "\"></script>
+   
+   
+   ";
+        // line 350
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 353
+        echo "   
+   
+   ";
+        // line 355
         $this->displayBlock('footerscript', $context, $blocks);
-        // line 359
+        // line 357
         echo "
 </body>
 
@@ -429,22 +444,30 @@ class __TwigTemplate_913f1a1dff0cce0a745aea95d560c6bb9116c21a62ee36ca3d9693b6a29
         echo "Bienvenidos";
     }
 
-    // line 34
+    // line 35
     public function block_headscript($context, array $blocks = array())
     {
     }
 
-    // line 335
+    // line 320
     public function block_body($context, array $blocks = array())
     {
         echo " ";
     }
 
-    // line 357
+    // line 350
+    public function block_javascripts($context, array $blocks = array())
+    {
+        // line 351
+        echo "        
+   ";
+    }
+
+    // line 355
     public function block_footerscript($context, array $blocks = array())
     {
-        // line 358
-        echo "    ";
+        // line 356
+        echo "   ";
     }
 
     public function getTemplateName()
@@ -459,6 +482,6 @@ class __TwigTemplate_913f1a1dff0cce0a745aea95d560c6bb9116c21a62ee36ca3d9693b6a29
 
     public function getDebugInfo()
     {
-        return array (  447 => 358,  444 => 357,  438 => 335,  433 => 34,  427 => 10,  419 => 359,  417 => 357,  413 => 356,  407 => 353,  401 => 350,  395 => 347,  380 => 335,  76 => 34,  63 => 24,  57 => 21,  51 => 18,  45 => 15,  39 => 12,  34 => 10,  23 => 1,);
+        return array (  470 => 356,  467 => 355,  462 => 351,  459 => 350,  453 => 320,  448 => 35,  442 => 10,  434 => 357,  432 => 355,  428 => 353,  426 => 350,  420 => 347,  416 => 346,  410 => 343,  405 => 341,  399 => 338,  393 => 335,  387 => 332,  372 => 320,  166 => 117,  81 => 35,  70 => 27,  64 => 24,  58 => 21,  52 => 18,  46 => 15,  40 => 12,  35 => 10,  24 => 1,);
     }
 }

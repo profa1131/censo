@@ -214,13 +214,7 @@ class __TwigTemplate_f968f15960de865925ee15961e575008e6efa49aa53337e7457e4880115
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "participaOrganizacion", array()), "html", null, true);
         echo "</td>
                         </tr>
-                        <tr>
-                            <th>Edad</th>
-                            <td>";
-        // line 117
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "edad", array()), "html", null, true);
-        echo "</td>
-                        </tr>
+                        
                     </tbody>
                 
             
@@ -248,20 +242,20 @@ class __TwigTemplate_f968f15960de865925ee15961e575008e6efa49aa53337e7457e4880115
    
 
         <a class=\" col-md-12 btn btn-primary\" href=\"";
-        // line 145
+        // line 142
         echo $this->env->getExtension('routing')->getPath("habitantes");
         echo "\">Volver a la Lista </a> <br>
         </a>
 
 
         <a class=\" col-md-12 mt btn btn-success\" href=\"";
-        // line 149
+        // line 146
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("habitantes_edit", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id", array()))), "html", null, true);
         echo "\">Editar Registro </a>
 
 
         ";
-        // line 152
+        // line 149
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form');
         echo "
    
@@ -286,6 +280,6 @@ class __TwigTemplate_f968f15960de865925ee15961e575008e6efa49aa53337e7457e4880115
 
     public function getDebugInfo()
     {
-        return array (  265 => 152,  259 => 149,  252 => 145,  221 => 117,  214 => 113,  207 => 109,  200 => 105,  193 => 101,  186 => 97,  179 => 93,  172 => 89,  165 => 85,  158 => 81,  151 => 77,  144 => 73,  137 => 69,  130 => 65,  123 => 61,  116 => 57,  109 => 53,  102 => 49,  95 => 45,  88 => 41,  81 => 37,  74 => 33,  67 => 29,  60 => 25,  53 => 21,  46 => 17,  31 => 4,  28 => 3,);
+        return array (  259 => 149,  253 => 146,  246 => 142,  214 => 113,  207 => 109,  200 => 105,  193 => 101,  186 => 97,  179 => 93,  172 => 89,  165 => 85,  158 => 81,  151 => 77,  144 => 73,  137 => 69,  130 => 65,  123 => 61,  116 => 57,  109 => 53,  102 => 49,  95 => 45,  88 => 41,  81 => 37,  74 => 33,  67 => 29,  60 => 25,  53 => 21,  46 => 17,  31 => 4,  28 => 3,);
     }
 }

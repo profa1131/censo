@@ -36,16 +36,16 @@ class __TwigTemplate_ca9c8cd3a982edd710c0e8062473221ec2514a2f1ebdf5bbae1ff2ba7e8
                 Agregar Familias
             </div>
             <div class=\"panel-body\">
-                <p>
+                
                     ";
         // line 13
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : null), 'form');
         echo "
-            <a class=\"btn btn-primary\" href=\"";
+            <a class=\" col-md-12 mt btn btn-primary\" href=\"";
         // line 14
         echo $this->env->getExtension('routing')->getPath("familias");
         echo "\">Volver a la Lista </a>
-                </p>
+                
             </div>
         </div>
     </div>
